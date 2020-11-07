@@ -1,0 +1,10 @@
+{
+    "require": {
+        "illuminate/database": "^8.13"
+    },
+    "autoload": {
+        "classmap": [
+            "domaci-optika/app/models"
+        ]
+    }
+}
