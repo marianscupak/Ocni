@@ -1,1 +1,1 @@
-These glasses: <?=$data['name']?> are nice!
+These glasses: <?php echo ($data['glasses']->name)?> are nice!

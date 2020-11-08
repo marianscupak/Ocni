@@ -1,7 +1,7 @@
 <?php
 
 class App {
-
+    // Class that handles the routing.
     protected $controller = 'home';
     protected $method = 'index';
     protected $params = [];
