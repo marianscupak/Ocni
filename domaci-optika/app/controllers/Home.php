@@ -2,8 +2,9 @@
 
 class Home extends Controller {
     // Homepage controller.
-    public function index($id = 1) {
-        $glasses = Glasses::find($id);        
-        $this->view('home/index', ['glasses' => $glasses]);
+    public function index() {
+        $this->view('shared/header', ['title' => 'Domácí optika']);
+        $this->view('home/index');
+        $this->view('shared/footer');
     }
 }
