@@ -52,7 +52,7 @@ class Bryle extends Controller {
         $count = $glasses->count();
 
         $glasses = $glasses->skip(($page - 1) * Glasses::$page_count)->take(Glasses::$page_count);
-        
+
         $glasses = $glasses->get();
 
         $data['glasses'] = $glasses;
@@ -63,7 +63,27 @@ class Bryle extends Controller {
         $data['gender'] = $gender;
 
         $this->view("shared/header", ['title' => 'Domácí optika']);
-        $this->view("glasses/all_glasses", $data);
+        $this->view("glasses/glasses_all", $data);
         $this->view("shared/footer");
+    }
+
+    public function detail($params = []) {
+        if (empty($params)) {
+            $this->index();
+        }
+        else {
+            if (!is_numeric($params[0])) {
+                $this->index();
+            }
+            else {
+                $id = $params[0];
+
+                $glasses = Glasses::select('*')->where('id_glasses', '=', $id)->get()[0];
+
+                $this->view("shared/header", ['title' => 'Domácí optika']);
+                $this->view("glasses/glasses_detail", ['glasses' => $glasses]);
+                $this->view("shared/footer");
+            }
+        }
     }
 }
