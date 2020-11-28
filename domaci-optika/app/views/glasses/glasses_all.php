@@ -143,7 +143,7 @@
                 $exploded = explode("?", $url);
                 $url_split['start'] = $exploded[0];
                 
-                $url_split['end'] = (!empty($exploded[1]))? $exploded[1] : "";                
+                $url_split['end'] = (!empty($exploded[1]))? $exploded[1] : '';                
                 $pageCount = ceil($data['count'] / $data['per_page']);
 
                 if (is_numeric($url_split['start'][strlen($url_split['start']) - 1])) {
