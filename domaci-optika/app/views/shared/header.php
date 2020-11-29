@@ -31,7 +31,7 @@
                     <li class="dropdownHeader" onclick="dropdownMenu(0);"><a>Ceník<img src="/Ocni/domaci-optika/public/images/arrow.png" alt="Šipka" class="navArrow"></a>
                         <ul>
                             <li><a href="/Ocni/domaci-optika/public/cenik">Ceník obrub a čoček</a></li>
-                            <li><a href="/Ocni/domaci-optika/public/transparentni-ceny">Transparentní ceny</a></li>                            
+                            <li><a href="/Ocni/domaci-optika/public/transparentni_ceny">Transparentní ceny</a></li>                            
                         </ul>
                     </li>
                     <li class="dropdownHeader" onclick="dropdownMenu(1);"><a>Brýle<img src="/Ocni/domaci-optika/public/images/arrow.png" alt="Šipka" class="navArrow"></a>
@@ -42,7 +42,7 @@
                     </li>
                     <li class="dropdownHeader" onclick="dropdownMenu(2);"><a>O nás<img src="/Ocni/domaci-optika/public/images/arrow.png" alt="Šipka" class="navArrow"></a>
                         <ul>
-                            <li><a href="/Ocni/domaci-optika/public/jak-to-funguje">Jak to funguje</a></li>
+                            <li><a href="/Ocni/domaci-optika/public/jak_to_funguje">Jak to funguje</a></li>
                             <li><a href="/Ocni/domaci-optika/public/kontakty">Kontakt</a></li>
                         </ul>
                     </li>
