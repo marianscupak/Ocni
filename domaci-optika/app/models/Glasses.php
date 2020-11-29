@@ -3,7 +3,7 @@
 use Illuminate\Database\Eloquent\Model as Model;
 
 class Glasses extends Model {
-    public static $page_count = 3;
+    public static $per_page = 12;
     protected $table = 'glasses';
     protected $primaryKey = 'id_glasses';
     public $timestamps = false;

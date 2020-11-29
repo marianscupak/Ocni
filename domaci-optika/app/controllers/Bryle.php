@@ -51,14 +51,14 @@ class Bryle extends Controller {
 
         $count = $glasses->count();
 
-        $glasses = $glasses->skip(($page - 1) * Glasses::$page_count)->take(Glasses::$page_count);
+        $glasses = $glasses->skip(($page - 1) * Glasses::$per_page)->take(Glasses::$per_page);
 
         $glasses = $glasses->get();
 
         $data['glasses'] = $glasses;
         $data['count'] = $count;
         $data['limits'] = Glasses::get_limits();
-        $data['per_page'] = Glasses::$page_count;
+        $data['per_page'] = Glasses::$per_page;
         $data['page'] = $page;
         $data['gender'] = $gender;
 

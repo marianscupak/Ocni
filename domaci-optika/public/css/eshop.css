@@ -365,6 +365,13 @@ input[type=number] {
     .contactForm input {
         font-size: 1rem;
     }
+    .filterSubmit {
+        margin-bottom: 10px;
+    }
+    .gallerySlide {
+        width: 80%;
+        margin: auto;
+    }
     .gallerySlideWrap {
         width: 100%;
     }
