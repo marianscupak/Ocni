@@ -26,7 +26,7 @@
                             if (!empty($_GET['order'])) {
                                 if ($_GET['order'] == 'priceDesc') {
                                     echo ' selected';
-                                }                                
+                                }
                             }
                         ?>
                     >Nejvyšší ceny</option>

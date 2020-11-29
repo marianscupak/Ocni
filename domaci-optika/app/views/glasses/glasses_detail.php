@@ -34,7 +34,7 @@
             <h1 class="darkHeader" id="interest">Zaujaly Vás tyto brýle?</h1>
             <h2>Domluvte si schůzku online!</h2>
             <!-- TODO: complete the form -->
-            <form action="controllers/email.php" method="post" class="contactForm">
+            <form action="/Ocni/domaci-optika/public/email" method="post" class="contactForm">
                 <label for="name">Jméno <span class="required">*</span></label>
                 <input type="text" name="name" required>
                 <label for="surname">Příjmení <span class="required">*</span></label>
