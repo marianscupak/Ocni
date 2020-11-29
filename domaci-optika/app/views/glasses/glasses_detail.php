@@ -54,7 +54,7 @@
                 <input type="submit" name="submit" value="Odeslat">
                 <input type="hidden" value=<?php echo '"' . $data['glasses']->id_glasses . '"'; ?> name="id">
             </form>
-            <p id="contact">Nebo nás <a href="contacts.php" class="link">kontaktujte zde</a>.</p>
+            <p id="contact">Nebo nás <a href="/Ocni/domaci-optika/public/kontakty" class="link">kontaktujte zde</a>.</p>
         </div>
     </div>
 </main>
