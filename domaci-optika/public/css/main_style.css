@@ -199,13 +199,15 @@ h2 {
 }
 
 #message {
+    display: none;
     color: white;
+    background-color: #65c3ba;
     max-width: 400px;
     position: fixed;
     bottom: 10px;
     left: 10px;
     border-radius: 7px;
-    font-size: 2rem;
+    font-size: 1.4rem;
     padding: 20px;
     display: none;
     z-index: 10;

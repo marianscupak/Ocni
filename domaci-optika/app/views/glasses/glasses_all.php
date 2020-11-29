@@ -26,7 +26,7 @@
                             if (!empty($_GET['order'])) {
                                 if ($_GET['order'] == 'priceDesc') {
                                     echo ' selected';
-                                }                                
+                                }
                             }
                         ?>
                     >Nejvyšší ceny</option>
@@ -117,12 +117,12 @@
                         foreach ($data['glasses'] as $glasses) {
                             echo '
                                 <div class="glassesContainer">
-                                    <a href="glasses_detail.php?id=' . $glasses->id_glasses . '" class="imageContainer">
+                                    <a href="/Ocni/domaci-optika/public/bryle/detail/' . $glasses->id_glasses . '" class="imageContainer">
                                         <img src="/Ocni/domaci-optika/public/images/glasses/glasses_' . $glasses->id_glasses . '_1.jpg" alt="Brýle">
                                     </a>
-                                    <a href="glasses_detail.php?id=' . $glasses->id_glasses . '" class="glassesName"><h2>' . $glasses->name . '</h2></a>
+                                    <a href="/Ocni/domaci-optika/public/bryle/detail/' . $glasses->id_glasses . '" class="glassesName"><h2>' . $glasses->name . '</h2></a>
                                     <h3>' . number_format($glasses->price, 0, ',', ' ') . ' Kč</h3>
-                                    <div class="glassesDetail"><a href="glasses_detail.php?id=' . $glasses->id_glasses . '">Detail</a></div>
+                                    <div class="glassesDetail"><a href="/Ocni/domaci-optika/public/bryle/detail/' . $glasses->id_glasses . '">Detail</a></div>
                                 </div>
                             ';
                         }
@@ -138,16 +138,21 @@
         <ul>
             <?php
                 $url = $_SERVER['REQUEST_URI'];
-                
+
+                str_replace('detail/', '', $url);
                 $exploded = explode("?", $url);
                 $url_split['start'] = $exploded[0];
                 
-                $url_split['end'] = (!empty($exploded[1]))? $exploded[1] : "";                
+                $url_split['end'] = (!empty($exploded[1]))? $exploded[1] : '';                
                 $pageCount = ceil($data['count'] / $data['per_page']);
 
                 if (is_numeric($url_split['start'][strlen($url_split['start']) - 1])) {
                     $url_split['start'] = substr($url_split['start'], 0, -2);
                 }                
+
+                if ($url_split['start'][strlen($url_split['start']) - 1] == '/') {
+                    $url_split['start'] = substr($url_split['start'], 0, -1);
+                }
 
                 if ($pageCount > 1) {
                     echo '<li><a href="';
