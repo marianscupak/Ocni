@@ -30,7 +30,7 @@
     ?>
 </div>
 <img src="/Ocni/domaci-optika/public/images/close.png" id="messageClose" onclick=hideMess()>
-<script src="/Ocni/shared_resources/js/message.js"></script>
-<script src="/Ocni/shared_resources/js/header.js"></script>
+<script src="/Ocni/domaci-optika/public/js/message.js"></script>
+<script src="/Ocni/domaci-optika/public/js/header.js"></script>
 </body>
 </html>

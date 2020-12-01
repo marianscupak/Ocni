@@ -30,4 +30,4 @@
         </div>
     </div>
 </main>
-<script src="/Ocni/domaci-optika/public/js/slideshow.js"></script>
+<script src="/Ocni/shared_resources/js/slideshow.js"></script>
