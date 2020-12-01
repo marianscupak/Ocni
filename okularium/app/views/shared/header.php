@@ -2,10 +2,10 @@
 <html lang="cs">
 <head>
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/Ocni/domaci-optika/public/css/header.css">
-    <link rel="stylesheet" href="/Ocni/domaci-optika/public/css/main_style.css">
-    <link rel="stylesheet" href="/Ocni/domaci-optika/public/css/footer.css">
-    <link rel="stylesheet" href="/Ocni/domaci-optika/public/css/eshop.css">
+    <link rel="stylesheet" href="/Ocni/shared_resources/css/header.css">
+    <link rel="stylesheet" href="/Ocni/shared_resources/css/main_style.css">
+    <link rel="stylesheet" href="/Ocni/shared_resources/css/footer.css">
+    <link rel="stylesheet" href="/Ocni/shared_resources/css/eshop.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway&family=Roboto&display=swap" rel="stylesheet">
     <link rel="shortcut icon" type="image/x-icon" href="/Ocni/domaci-optika/public/images/logo_glasses.png">
     <meta charset='UTF-8'>
