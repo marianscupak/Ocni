@@ -197,4 +197,4 @@
         </ul>
     </div>
 </main>
-<script src="/Ocni/domaci-optika/public/js/form.js"></script>
+<script src="/Ocni/shared_resources/js/form.js"></script>

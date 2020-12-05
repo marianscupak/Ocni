@@ -58,4 +58,4 @@
         </div>
     </div>
 </main>
-<script src="/Ocni/domaci-optika/public/js/gallery.js"></script>
+<script src="/Ocni/shared_resources/js/gallery.js"></script>

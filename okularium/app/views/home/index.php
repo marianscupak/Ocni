@@ -1,9 +1,8 @@
 <main class="container">
     <div class="mainPanel">
         <div class="slideshow">
-            <img src="/Ocni/domaci-optika/public/images/slideshow_dummy_1.jpg" alt="Brýle">
-            <img src="/Ocni/domaci-optika/public/images/slideshow_dummy_2.jpg" alt="Brýle">
-            <img src="/Ocni/domaci-optika/public/images/slideshow_dummy_3.jpg" alt="Brýle">
+            <img src="/Ocni/okularium/public/images/slideshow_dummy_1.jpg" alt="Brýle">
+            <img src="/Ocni/okularium/public/images/slideshow_dummy_2.jpg" alt="Brýle">
         </div>
         <h1>PRO KVALITNÍ BRÝLE JIŽ NEMUSÍTE ANI VYJÍT Z DOMU</h1>
         <div class="perks">
