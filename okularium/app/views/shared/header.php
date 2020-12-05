@@ -6,8 +6,10 @@
     <link rel="stylesheet" href="/Ocni/shared_resources/css/main_style.css">
     <link rel="stylesheet" href="/Ocni/shared_resources/css/footer.css">
     <link rel="stylesheet" href="/Ocni/shared_resources/css/eshop.css">
+    <link rel="stylesheet" href="/Ocni/okularium/public/css/colors.css">
+    <link rel="stylesheet" href="/Ocni/okularium/public/css/main_style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway&family=Roboto&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" type="image/x-icon" href="/Ocni/domaci-optika/public/images/logo_glasses.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/Ocni/okularium/public/images/icon.png">
     <meta charset='UTF-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- TODO: SEO 
@@ -18,13 +20,13 @@
 <body>
     <header>
         <div class="headerLogo">
-            <a href="/Ocni/domaci-optika/public">
-                <img src="/Ocni/domaci-optika/public/images/logo_optika.png" alt="Domácí optika">
+            <a href="/Ocni/okularium/public">
+                <img src="/Ocni/okularium/public/images/logo_klinika.png" alt="Okularium">
             </a>
         </div>
         <button onclick="responsiveMenu();" class="menuImg"><img src="/Ocni/domaci-optika/public/images/menu.png" alt="menu"></button>
         <div class="stickyHeader-hide stickyHeader">
-            <a href="/Ocni/domaci-optika/public"><img src="/Ocni/domaci-optika/public/images/logo_optika.png" alt="Domácí optika" class="stickyImg"></a>
+            <a href="/Ocni/okularium/public"><img src="/Ocni/okularium/public/images/logo_klinika.png" alt="Domácí optika" class="stickyImg"></a>
             <nav class="navigation">
                 <ul>
                     <li><a href="/Ocni/domaci-optika/public/">Domů</a></li>
@@ -46,7 +48,7 @@
                             <li><a href="/Ocni/domaci-optika/public/kontakty">Kontakt</a></li>
                         </ul>
                     </li>
-                    <li><a href="/Ocni/domaci-optika/public/">Klinika</a></li>
+                    <li><a href="/Ocni/domaci-optika/public/">Optika</a></li>
                 </ul>
             </nav>
         </div>

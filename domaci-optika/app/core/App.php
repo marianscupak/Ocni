@@ -2,7 +2,7 @@
 
 class App {
     // Class that handles the routing.
-    protected $controller = 'home';
+    protected $controller = 'domu';
     protected $method = 'index';
     protected $params = [];
 

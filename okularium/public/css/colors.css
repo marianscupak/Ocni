@@ -1,0 +1,63 @@
+.navigation ul li a:hover {
+    color: #FF6347;
+}
+
+.navigation ul li {
+    border-right: 1px solid #FF6347;
+}
+
+.dropdownHeader ul li {
+    border-right: none;
+}
+
+.dropdownHeader ul li {
+    border-bottom: 1px solid #FF6347;
+}
+
+.bigHeader {
+    color: #FF6347;
+}
+
+.darkHeader {
+    color: #DC143C;
+}
+
+h2 {
+    color: #FF6347;
+}
+
+.niceList .item:hover div {
+    color: #FF6347;
+}
+
+.para a {
+    text-decoration-color: #FF6347;
+}
+
+.link {
+    color: #FF6347;
+}
+
+.link:hover {
+    color: #DC143C;
+}
+
+#message {
+    background-color: #FF6347;
+}
+
+.mainPanel h1 {
+    color: #FF6347;
+}
+
+.filters form input,
+.filters form select,
+.contactForm input,
+.contactForm textarea {
+    border: 2px solid #FF6347;
+}
+
+.filterSubmit,
+.contactForm input[type="submit"] {
+    background-color: #FF6347;
+}

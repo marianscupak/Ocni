@@ -46,7 +46,7 @@
                             <li><a href="/Ocni/domaci-optika/public/kontakty">Kontakt</a></li>
                         </ul>
                     </li>
-                    <li><a href="/Ocni/domaci-optika/public/">Klinika</a></li>
+                    <li><a href="/Ocni/okularium/public/">Klinika</a></li>
                 </ul>
             </nav>
         </div>
