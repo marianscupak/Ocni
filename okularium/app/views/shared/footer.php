@@ -29,8 +29,21 @@
         }
     ?>
 </div>
+<div class="loginWrapper">
+    <div class="loginForm">
+        <img id="close" src="/Ocni/domaci-optika/public/images/close.png" onclick="closeLogin();">
+        <h1 id="welcome">Vítejte zpět!</h1>
+        <img id="welcomeImg" src="/Ocni/okularium/public/images/icon.png">
+        <form action="/Ocni/okularium/public/uzivatel/login" method="post">
+            <input id="email" name="email" type="text" placeholder="E-mail" required>
+            <input id="password" name="password" type="password" placeholder="Heslo" required>
+            <input type="submit" value="Přihlásit se">
+        </form>
+    </div>
+</div>
 <img src="/Ocni/domaci-optika/public/images/close.png" id="messageClose" onclick=hideMess()>
 <script src="/Ocni/shared_resources/js/message.js"></script>
 <script src="/Ocni/shared_resources/js/header.js"></script>
+<script src="/Ocni/okularium/public/js/login.js"></script>
 </body>
 </html>

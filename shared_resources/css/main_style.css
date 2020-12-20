@@ -6,6 +6,13 @@
     text-decoration: none;
 }
 
+input:focus,
+textarea:focus,
+select:focus,
+button:focus {
+    outline: none;
+}
+
 .container {
     margin: 30px 0 30px 0;
 }

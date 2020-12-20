@@ -29,7 +29,7 @@
             <a href="/Ocni/okularium/public"><img src="/Ocni/okularium/public/images/logo_klinika.png" alt="Domácí optika" class="stickyImg"></a>
             <nav class="navigation">
                 <ul>
-                    <li><a href="/Ocni/domaci-optika/public/">Domů</a></li>
+                    <li><a href="/Ocni/okularium/public/">Domů</a></li>
                     <li class="dropdownHeader" onclick="dropdownMenu(0);"><a>Ceník<img src="/Ocni/domaci-optika/public/images/arrow.png" alt="Šipka" class="navArrow"></a>
                         <ul>
                             <li><a href="/Ocni/domaci-optika/public/cenik">Ceník obrub a čoček</a></li>
