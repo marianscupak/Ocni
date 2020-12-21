@@ -324,4 +324,7 @@ ol li:hover:after {
     ol li {
         margin-left: 10px;
     }
+    #messageClose {
+        bottom: 50px;
+    }
 }

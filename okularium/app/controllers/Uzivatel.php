@@ -3,9 +3,15 @@
 class Uzivatel extends Controller {
 
     public function index() {
-        $this->view('shared/header', ['title' => 'Oční klinika Okularium']);
-        $this->view('home/index');
-        $this->view('shared/footer');
+        if (!empty($_SESSION)) {
+            $this->view('shared/header', ['title' => 'Oční klinika Okularium']);
+            $this->view('home/index');
+            $this->view('shared/footer');
+        }
+        else {
+            header("Location: /Ocni/okularium/public/");
+            exit();
+        }
     }
 
     public function login($params = []) {
@@ -33,5 +39,14 @@ class Uzivatel extends Controller {
             header("Location: /Ocni/okularium/public/");
             exit();
         }
+    }
+    
+    public function logout() {
+        $_SESSION = [];
+        
+        session_destroy();
+
+        header("Location: /Ocni/okularium/public/?logout=1");
+        exit();
     }
 }

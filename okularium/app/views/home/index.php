@@ -25,8 +25,20 @@
             }
             else if ($_SESSION['role'] == 'admin') {
         ?>
-        <h1>Vítejte zpět administrátore <?= $_SESSION['name'] . ' ' . $_SESSION['surname'] ?>!</h1>
 
+        <div class="mainSection">
+            <h1>Vítejte zpět administrátore <?= $_SESSION['name'] . ' ' . $_SESSION['surname'] ?>!</h1>
+            <div class="cardsContainer">
+                <a href="/Ocni/okularium/public/pacient" class="card">
+                    <img src="/Ocni/okularium/public/images/patient.png">
+                    <h2>Pacienti</h2>
+                </a>
+                <a href="/Ocni/okularium/public/prohlidka" class="card">
+                    <img src="/Ocni/okularium/public/images/exam.png">
+                    <h2>Prohlídky</h2>
+                </a>
+            </div>
+        </div>
         <?php
             }
         ?>

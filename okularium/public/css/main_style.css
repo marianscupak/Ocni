@@ -124,6 +124,33 @@
     left: 92%;
 }
 
+.cardsContainer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.card {
+    padding: 10px;
+    border-radius: 10px;
+    transition: box-shadow 0.5s ease, border 0.5s ease;
+    border-color: rgba(0, 0, 0, 0.3);
+}
+
+.card:hover {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
+    padding: 9px;
+}
+
+.card img {
+    width: 100px;
+    display: block;
+}
+
+.card h2 {
+    text-align: center;
+}
+
 @media screen and (max-width: 600px) {
     .optionContainer {
         flex-direction: column;

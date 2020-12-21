@@ -30,25 +30,22 @@
             <nav class="navigation">
                 <ul>
                     <li><a href="/Ocni/okularium/public/">Domů</a></li>
-                    <li class="dropdownHeader" onclick="dropdownMenu(0);"><a>Ceník<img src="/Ocni/domaci-optika/public/images/arrow.png" alt="Šipka" class="navArrow"></a>
-                        <ul>
-                            <li><a href="/Ocni/domaci-optika/public/cenik">Ceník obrub a čoček</a></li>
-                            <li><a href="/Ocni/domaci-optika/public/transparentni_ceny">Transparentní ceny</a></li>                            
-                        </ul>
-                    </li>
-                    <li class="dropdownHeader" onclick="dropdownMenu(1);"><a>Brýle<img src="/Ocni/domaci-optika/public/images/arrow.png" alt="Šipka" class="navArrow"></a>
-                        <ul>
-                            <li><a href="/Ocni/domaci-optika/public/bryle/m">Pánské</a></li>
-                            <li><a href="/Ocni/domaci-optika/public/bryle/f">Dámské</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdownHeader" onclick="dropdownMenu(2);"><a>O nás<img src="/Ocni/domaci-optika/public/images/arrow.png" alt="Šipka" class="navArrow"></a>
+                    <li class="dropdownHeader" onclick="dropdownMenu(0);"><a>O nás<img src="/Ocni/domaci-optika/public/images/arrow.png" alt="Šipka" class="navArrow"></a>
                         <ul>
                             <li><a href="/Ocni/domaci-optika/public/jak_to_funguje">Jak to funguje</a></li>
                             <li><a href="/Ocni/domaci-optika/public/kontakty">Kontakt</a></li>
                         </ul>
                     </li>
                     <li><a href="/Ocni/domaci-optika/public/">Optika</a></li>
+                    <?php
+                        if (empty($_SESSION)) {
+                            echo '<li><a onclick="loginForm();">Přihlásit se</a></li>';
+                        }
+                        else {
+                            echo '<li><a href="/Ocni/okularium/public/uzivatel/">Profil</a></li>';
+                            echo '<li><a href="/Ocni/okularium/public/uzivatel/logout">Odhlásit se</a></li>';
+                        }
+                    ?>
                 </ul>
             </nav>
         </div>

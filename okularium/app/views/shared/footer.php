@@ -20,6 +20,11 @@
                 echo 'Neúspěšný pokus o přihlášení.';
             }
         }
+        if (isset($_GET['logout'])) {
+            if ($_GET['logout'] == 1) {
+                echo 'Odhlášení úspěšné.';
+            }
+        }
     ?>
 </div>
 <div class="loginWrapper">
