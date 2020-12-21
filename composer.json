@@ -4,7 +4,8 @@
     },
     "autoload": {
         "classmap": [
-            "domaci-optika/app/models"
+            "domaci-optika/app/models",
+            "okularium/app/models"
         ]
     }
 }

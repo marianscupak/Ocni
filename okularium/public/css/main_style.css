@@ -81,6 +81,11 @@
     padding: 5px 0;
     border: none;
     border-bottom: 2px solid darkgray;
+    transition: 0.5s ease;
+}
+
+.loginForm form input:focus {
+    border-bottom: 2px solid #FF6347;
 }
 
 .loginForm form input[type="submit"] {

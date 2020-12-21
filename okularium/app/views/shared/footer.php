@@ -12,19 +12,12 @@
 </footer>
 <div id="message">
     <?php            
-        if (isset($_GET['add'])) {
-            if ($_GET['add'] == 1) {
-                echo 'Brýle úspěšně přidány.';
+        if (isset($_GET['login'])) {
+            if ($_GET['login'] == 1) {
+                echo 'Přihlášení úspěšné.';
             }
-        }
-        if (isset($_GET['del'])) {
-            if ($_GET['del'] == 1) {
-                echo 'Brýle úspěšně vymazány.';
-            }
-        }
-        if (isset($_GET['mail'])) {
-            if ($_GET['mail'] == 1) {
-                echo 'Zpráva odeslána.';
+            else {
+                echo 'Neúspěšný pokus o přihlášení.';
             }
         }
     ?>
@@ -35,7 +28,7 @@
         <h1 id="welcome">Vítejte zpět!</h1>
         <img id="welcomeImg" src="/Ocni/okularium/public/images/icon.png">
         <form action="/Ocni/okularium/public/uzivatel/login" method="post">
-            <input id="email" name="email" type="text" placeholder="E-mail" required>
+            <input id="login" name="login" type="text" placeholder="E-mail" required>
             <input id="password" name="password" type="password" placeholder="Heslo" required>
             <input type="submit" value="Přihlásit se">
         </form>

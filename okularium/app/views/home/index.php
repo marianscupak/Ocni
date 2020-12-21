@@ -23,8 +23,10 @@
         </div>
         <?php
             }
-            else {
+            else if ($_SESSION['role'] == 'admin') {
         ?>
+        <h1>Vítejte zpět administrátore <?= $_SESSION['name'] . ' ' . $_SESSION['surname'] ?>!</h1>
+
         <?php
             }
         ?>
