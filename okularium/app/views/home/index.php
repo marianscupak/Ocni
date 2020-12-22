@@ -25,7 +25,6 @@
             }
             else if ($_SESSION['role'] == 'admin') {
         ?>
-
         <div class="mainSection">
             <h1>Vítejte zpět administrátore <?= $_SESSION['name'] . ' ' . $_SESSION['surname'] ?>!</h1>
             <div class="cardsContainer">
@@ -44,4 +43,8 @@
         ?>
     </div>
 </main>
-<script src="/Ocni/shared_resources/js/slideshow.js"></script>
+<?php
+    if (empty($_SESSION)) {
+        echo '<script src="/Ocni/shared_resources/js/slideshow.js"></script>';
+    }
+?>

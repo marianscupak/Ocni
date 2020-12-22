@@ -8,7 +8,7 @@ class User extends Model {
     public $timestamps = false;
 
     protected $id_user;
-    protected $login;
+    protected $email;
     protected $password;
     protected $role;
 }

@@ -25,6 +25,19 @@
                 echo 'Odhlášení úspěšné.';
             }
         }
+        if (isset($_GET['pwd'])) {
+            if ($_GET['pwd'] == -1) {
+                echo 'Staré heslo se neshoduje.';
+            }
+            else if ($_GET['pwd'] == 0) {
+                echo 'Hesla se neshodují.';
+            }
+        }
+        if (isset($_GET['update'])) {
+            if ($_GET['update'] == 1) {
+                echo 'Úspěšně aktualizováno.';
+            }
+        }
     ?>
 </div>
 <div class="loginWrapper">
@@ -33,7 +46,7 @@
         <h1 id="welcome">Vítejte zpět!</h1>
         <img id="welcomeImg" src="/Ocni/okularium/public/images/icon.png">
         <form action="/Ocni/okularium/public/uzivatel/login" method="post">
-            <input id="login" name="login" type="text" placeholder="E-mail" required>
+            <input id="login" name="login" type="email" placeholder="E-mail" required>
             <input id="password" name="password" type="password" placeholder="Heslo" required>
             <input type="submit" value="Přihlásit se">
         </form>

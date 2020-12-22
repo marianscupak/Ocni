@@ -1,3 +1,8 @@
+.mainSection h1 {
+    font-size: 3rem;
+    color: #FF6347;
+}
+
 .slide p {
     position: absolute;
     background-color: rgba(0, 0, 0, 0.3);
@@ -76,7 +81,8 @@
     flex-direction: column;
 }
 
-.loginForm form input {
+.loginForm form input,
+#changeForm input {
     margin-bottom: 20px;
     padding: 5px 0;
     border: none;
@@ -84,11 +90,14 @@
     transition: 0.5s ease;
 }
 
-.loginForm form input:focus {
+.loginForm form input:focus,
+#changeForm input:focus {
     border-bottom: 2px solid #FF6347;
 }
 
-.loginForm form input[type="submit"] {
+.niceButton,
+.loginForm input[type="submit"],
+#changeForm input[type="submit"] {
     background-color: #FF6347;
     border: none;
     cursor: pointer;
@@ -99,7 +108,9 @@
     margin: auto;
 }
 
-.loginForm form input[type="submit"]:hover {
+.niceButton:hover,
+.loginForm input[type="submit"]:hover,
+#changeForm input[type="submit"]:hover {
     color: white;
     background-color: #DC143C;
 }
@@ -130,7 +141,7 @@
 }
 
 .card {
-    padding: 10px;
+    padding: 30px;
     border-radius: 10px;
     transition: box-shadow 0.5s ease, border 0.5s ease;
     border-color: rgba(0, 0, 0, 0.3);
@@ -139,7 +150,7 @@
 .card:hover {
     border: 1px solid rgba(0, 0, 0, 0.3);
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
-    padding: 9px;
+    padding: 29px;
 }
 
 .card img {
@@ -149,6 +160,41 @@
 
 .card h2 {
     text-align: center;
+}
+
+.profileInfo {
+    background-color: #F0F0F0;
+    border-radius: 10px;
+    padding: 40px;
+    display: flex;
+}
+
+.value {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    align-items: flex-start;
+}
+
+.changeButton {
+    margin: 5px 0 0 0;
+}
+
+.profileInfo h3 {
+    color: #FF6347;
+    font-size: 1.2rem;
+}
+
+#changeForm {
+    display: none;
+    margin: auto 0;
+    margin-left: auto;
+}
+
+#changeForm input {
+    background-color: #f0f0f0;
 }
 
 @media screen and (max-width: 600px) {
