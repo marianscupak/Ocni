@@ -1,5 +1,213 @@
+.mainSection h1 {
+    font-size: 3rem;
+    color: #FF6347;
+}
+
 .slide p {
     position: absolute;
     background-color: rgba(0, 0, 0, 0.3);
     padding: 20px;
+}
+
+.optionContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.option {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.option h2,
+.option p {
+    text-align: center;
+    margin: 0;
+}
+
+.blockLink {
+    display: block;
+    width: fit-content;
+    margin: auto;
+}
+
+.buttonSpace {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginButton {
+    padding: 20px;
+    font-size: 1.5rem;
+    background-color: #FF6347;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    transition: 0.5s ease;
+}
+
+.loginButton:hover {
+    color: white;
+    background-color: #DC143C;
+}
+
+.loginWrapper {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+
+.loginForm {
+    position: absolute;
+    background-color: white;
+    width: 30%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 50px;
+    border-radius: 10px;
+}
+
+.loginForm form {
+    display: flex;
+    flex-direction: column;
+}
+
+.loginForm form input,
+#changeForm input {
+    margin-bottom: 20px;
+    padding: 5px 0;
+    border: none;
+    border-bottom: 2px solid darkgray;
+    transition: 0.5s ease;
+}
+
+.loginForm form input:focus,
+#changeForm input:focus {
+    border-bottom: 2px solid #FF6347;
+}
+
+.niceButton,
+.loginForm input[type="submit"],
+#changeForm input[type="submit"] {
+    background-color: #FF6347;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.5s ease;
+    width: auto;
+    padding: 5px 20px;
+    margin: auto;
+}
+
+.niceButton:hover,
+.loginForm input[type="submit"]:hover,
+#changeForm input[type="submit"]:hover {
+    color: white;
+    background-color: #DC143C;
+}
+
+#welcome {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#welcomeImg {
+    width: 30%;
+    margin: auto;
+    display: block;
+}
+
+#close {
+    width: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 7%;
+    left: 92%;
+}
+
+.cardsContainer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.card {
+    padding: 30px;
+    border-radius: 10px;
+    transition: box-shadow 0.5s ease, border 0.5s ease;
+    border-color: rgba(0, 0, 0, 0.3);
+}
+
+.card:hover {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
+    padding: 29px;
+}
+
+.card img {
+    width: 100px;
+    display: block;
+}
+
+.card h2 {
+    text-align: center;
+}
+
+.profileInfo {
+    background-color: #F0F0F0;
+    border-radius: 10px;
+    padding: 40px;
+    display: flex;
+}
+
+.value {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    align-items: flex-start;
+}
+
+.changeButton {
+    margin: 5px 0 0 0;
+}
+
+.profileInfo h3 {
+    color: #FF6347;
+    font-size: 1.2rem;
+}
+
+#changeForm {
+    display: none;
+    margin: auto 0;
+    margin-left: auto;
+}
+
+#changeForm input {
+    background-color: #f0f0f0;
+}
+
+@media screen and (max-width: 600px) {
+    .optionContainer {
+        flex-direction: column;
+    }
+    .option {
+        margin: auto;
+    }
+    #close {
+        left: 85%;
+    }
+    #welcomeImg {
+        width: 60%;
+    }
 }

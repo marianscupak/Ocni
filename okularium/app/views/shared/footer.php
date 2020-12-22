@@ -12,25 +12,49 @@
 </footer>
 <div id="message">
     <?php            
-        if (isset($_GET['add'])) {
-            if ($_GET['add'] == 1) {
-                echo 'Brýle úspěšně přidány.';
+        if (isset($_GET['login'])) {
+            if ($_GET['login'] == 1) {
+                echo 'Přihlášení úspěšné.';
+            }
+            else {
+                echo 'Neúspěšný pokus o přihlášení.';
             }
         }
-        if (isset($_GET['del'])) {
-            if ($_GET['del'] == 1) {
-                echo 'Brýle úspěšně vymazány.';
+        if (isset($_GET['logout'])) {
+            if ($_GET['logout'] == 1) {
+                echo 'Odhlášení úspěšné.';
             }
         }
-        if (isset($_GET['mail'])) {
-            if ($_GET['mail'] == 1) {
-                echo 'Zpráva odeslána.';
+        if (isset($_GET['pwd'])) {
+            if ($_GET['pwd'] == -1) {
+                echo 'Staré heslo se neshoduje.';
+            }
+            else if ($_GET['pwd'] == 0) {
+                echo 'Hesla se neshodují.';
+            }
+        }
+        if (isset($_GET['update'])) {
+            if ($_GET['update'] == 1) {
+                echo 'Úspěšně aktualizováno.';
             }
         }
     ?>
 </div>
+<div class="loginWrapper">
+    <div class="loginForm">
+        <img id="close" src="/Ocni/domaci-optika/public/images/close.png" onclick="closeLogin();">
+        <h1 id="welcome">Vítejte zpět!</h1>
+        <img id="welcomeImg" src="/Ocni/okularium/public/images/icon.png">
+        <form action="/Ocni/okularium/public/uzivatel/login" method="post">
+            <input id="login" name="login" type="email" placeholder="E-mail" required>
+            <input id="password" name="password" type="password" placeholder="Heslo" required>
+            <input type="submit" value="Přihlásit se">
+        </form>
+    </div>
+</div>
 <img src="/Ocni/domaci-optika/public/images/close.png" id="messageClose" onclick=hideMess()>
 <script src="/Ocni/shared_resources/js/message.js"></script>
 <script src="/Ocni/shared_resources/js/header.js"></script>
+<script src="/Ocni/okularium/public/js/login.js"></script>
 </body>
 </html>
