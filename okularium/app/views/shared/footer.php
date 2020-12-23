@@ -32,10 +32,26 @@
             else if ($_GET['pwd'] == 0) {
                 echo 'Hesla se neshodují.';
             }
+            else if ($_GET['pwd'] == 1) {
+                echo 'Úspěšně aktualizováno.';
+            }
         }
         if (isset($_GET['update'])) {
             if ($_GET['update'] == 1) {
                 echo 'Úspěšně aktualizováno.';
+            }
+            else if ($_GET['update'] == 0) {
+                echo 'E-mail je už zabrán.';
+            }
+        }
+        if (isset($_GET['del'])) {
+            if ($_GET['del'] == 1) {
+                echo 'Uživatel odebrán.';
+            }
+        }
+        if (isset($_GET['add'])) {
+            if ($_GET['add'] == 1) {
+                echo 'Úspěšně objednáno.';
             }
         }
     ?>

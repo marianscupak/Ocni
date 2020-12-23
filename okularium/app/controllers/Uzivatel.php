@@ -4,34 +4,36 @@ class Uzivatel extends Controller {
 
     public function index($params = []) {
         if (!empty($_SESSION)) {
+            $user;
             if (empty($params)) {
                 $id = $_SESSION['id_user'];
 
                 $user = User::find($id);
-
-                $this->view('shared/header', ['title' => 'Oční klinika Okularium']);
-                $this->view('users/profile', ['user' => $user]);
-                $this->view('shared/footer');
             }
-            else if ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'doctor') {
+            else if (($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'doctor') || $_SESSION['email'] == ((gettype($params) == 'array')? $params[0] : $params)) {
                 $email = (gettype($params) == 'array')? $params[0] : $params;
 
                 $user = User::where('email', '=', $email)->first();
-
-                if (!empty($user)) {
-                    $this->view('shared/header', ['title' => 'Oční klinika Okularium']);
-                    $this->view('users/patient_profile', ['user' => $user]);
-                    $this->view('shared/footer');
-                }
-                else {
-                    header("Location: /Ocni/okularium/public/uzivatel/");
-                    exit();
-                }
             }
             else {
                 header("Location: /Ocni/okularium/public/uzivatel/");
                 exit();
             }
+
+            if (!empty($user)) {
+                $exams = [
+                    'past' => $user->exams()->where('date', '<', date('Y-m-d'))->orderBy('date', 'ASC')->orderBy('time', 'ASC')->get(),
+                    'future' => $user->exams()->where('date', '>=', date('Y-m-d'))->orderBy('date', 'ASC')->orderBy('time', 'ASC')->get()
+                ];    
+            }
+            else {
+                header("Location: /Ocni/okularium/public/uzivatel/");
+                exit();
+            }
+
+            $this->view('shared/header', ['title' => 'Oční klinika Okularium']);
+            $this->view('users/profile', ['user' => $user, 'exams' => $exams]);
+            $this->view('shared/footer');
         }
         else {
             header("Location: /Ocni/okularium/public/");
@@ -77,33 +79,70 @@ class Uzivatel extends Controller {
 
     public function update() {
         if (!empty($_POST)) {
+            $email = $_POST['original'];
             if (!empty($_POST['email'])) {
+                $emailUp;
                 $user = User::where('email', '=', $_POST['original'])->first();
 
-                $user->email = $_POST['email'];
-                $user->save();
+                if (count(User::where('email', '=', $_POST['email'])->get()) == 0) {
+                    $user->email = $_POST['email'];
+                    $user->save();
+                    $emailUp = true;
+                    $email = $_POST['email'];
+                    if ($_POST['original'] == $_SESSION['email']) {
+                        $_SESSION['email'] = $_POST['email'];
+                    }
+                }
+                else {
+                    $emailUp = false;
+                }
+                
             }
 
             if (!empty($_POST['pwd_o'] && !empty($_POST['pwd_n']))) {
-                $user = User::where('email', '=', $_POST['original'])->first();
+                $user = User::where('email', '=', $email)->first();
 
                 if (password_verify($_POST['pwd_o'], $user['password'])) {
                     $user->password = password_hash($_POST['pwd_n'], PASSWORD_DEFAULT);
                     $user->save();
+
+                    header("Location: /Ocni/okularium/public/uzivatel/" . $email . "?pwd=1");
+                    exit();
                 }
                 else {
-                    header("Location: /Ocni/okularium/public/uzivatel/?pwd=-1");
+                    header("Location: /Ocni/okularium/public/uzivatel/" . $email . "?pwd=-1");
                     exit();
                 }
             }
             else if ((!empty($_POST['pwd_o']) && empty($_POST['pwd_n'])) || (empty($_POST['pwd_o']) && !empty($_POST['pwd_n']))) {
-                header("Location: /Ocni/okularium/public/uzivatel/?pwd=0");
+                header("Location: /Ocni/okularium/public/uzivatel/" . $email . "?pwd=0");
                 exit();
             }
-            header("Location: /Ocni/okularium/public/uzivatel/?update=1");
+
+            header("Location: /Ocni/okularium/public/uzivatel/" . $email . "/?update=" . (($emailUp)? 1 : 0));
+            exit();
+            
         }
         else {
             header("Location: /Ocni/okularium/public/uzivatel/");
+            exit();
+        }
+    }
+
+    public function delete($params = []) {
+        if ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'doctor') {
+            if (is_numeric($params[0])) {
+                User::destroy($params[0]);
+                header("Location: /Ocni/okularium/public/uzivatel?del=1");
+                exit();
+            }
+            else {
+                header("Location: /Ocni/okularium/public/uzivatel");
+                exit();
+            }
+        }
+        else {
+            header("Location: /Ocni/okularium/public/uzivatel");
             exit();
         }
     }

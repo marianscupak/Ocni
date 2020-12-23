@@ -11,4 +11,8 @@ class User extends Model {
     protected $email;
     protected $password;
     protected $role;
+
+    public function exams() {
+        return $this->hasMany(Exam::class, 'id_user');
+    }
 }

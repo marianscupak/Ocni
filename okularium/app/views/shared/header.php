@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/Ocni/shared_resources/css/eshop.css">
     <link rel="stylesheet" href="/Ocni/okularium/public/css/colors.css">
     <link rel="stylesheet" href="/Ocni/okularium/public/css/main_style.css">
+    <link rel="stylesheet" href="/Ocni/okularium/public/css/flatpickr.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway&family=Roboto&display=swap" rel="stylesheet">
     <link rel="shortcut icon" type="image/x-icon" href="/Ocni/okularium/public/images/icon.png">
     <meta charset='UTF-8'>
