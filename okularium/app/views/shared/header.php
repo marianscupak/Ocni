@@ -37,6 +37,23 @@
                             <li><a href="/Ocni/domaci-optika/public/kontakty">Kontakt</a></li>
                         </ul>
                     </li>
+                    <?php
+                        if (!empty($_SESSION)) {
+                            if ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'doctor') {
+                                ?>
+                    <li class="dropdownHeader" onclick="dropdownMenu(1);"><a>Administrace<img src="/Ocni/domaci-optika/public/images/arrow.png" alt="Šipka" class="navArrow"></a>
+                        <ul>
+                            <li><a href="/Ocni/okularium/public/pacienti">Pacienti</a></li>
+                            <li><a href="/Ocni/okularium/public/pacienti/pridat">Přidat pacienta</a></li>
+                            <li><a href="/Ocni/okularium/public/prohlidky">Prohlídky</a></li>
+                            <li><a href="/Ocni/okularium/public/prohlidky/pridat">Objednat prohlídku</a></li>
+                        </ul>
+                    </li>
+
+                                <?php
+                            }
+                        }
+                    ?>
                     <li><a href="/Ocni/domaci-optika/public/">Optika</a></li>
                     <?php
                         if (empty($_SESSION)) {

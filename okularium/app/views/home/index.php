@@ -35,6 +35,10 @@
                     <img src="/Ocni/okularium/public/images/patient.png">
                     <h2>Pacienti</h2>
                 </a>
+                <a href="/Ocni/okularium/public/pacienti/pridat" class="card">
+                    <img src="/Ocni/okularium/public/images/patient.png">
+                    <h2>Přidat pacienta</h2>
+                </a>
                 <a href="/Ocni/okularium/public/prohlidky" class="card">
                     <img src="/Ocni/okularium/public/images/exam.png">
                     <h2>Prohlídky</h2>
@@ -42,7 +46,7 @@
                 <?php
                     }
                 ?>
-                <a href="/Ocni/okularium/public/prohlidka" class="card">
+                <a href="/Ocni/okularium/public/prohlidky/pridat" class="card">
                     <img src="/Ocni/okularium/public/images/exam.png">
                     <h2>Objednat prohlídku</h2>
                 </a>

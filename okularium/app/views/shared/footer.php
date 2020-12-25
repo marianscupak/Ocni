@@ -53,6 +53,17 @@
             if ($_GET['add'] == 1) {
                 echo 'Úspěšně objednáno.';
             }
+            else {
+                echo 'Problém s objednáním.';
+            }
+        }
+        if (isset($_GET['uadd'])) {
+            if ($_GET['uadd'] == 1) {
+                echo 'Uživatel přidán.';
+            }
+            else {
+                echo 'E-mailová adresa už je zabrána jiným uživatelem.';
+            }
         }
     ?>
 </div>

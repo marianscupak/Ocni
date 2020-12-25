@@ -1,6 +1,6 @@
 <main class="container">
     <div class="mainSection">
-        <h1 id="zibard">Objednat prohlídku</h1>
+        <h1>Objednat prohlídku</h1>
         <div class="profileInfo">
             <div>
                 <div class="field">

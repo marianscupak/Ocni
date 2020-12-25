@@ -7,12 +7,12 @@ var dateSettings = {
     "locale": {
         "firstDayOfWeek": 1
     },
-    minDate: "today",
+    minDate: new Date().fp_incr(1),
     altInput: true,
     altFormat: "j. F Y",
     onChange: function(selectedDates, dateStr, instance) {
         $.get({
-            url: "/Ocni/okularium/public/prohlidka/time?date=" + dateStr,
+            url: "/Ocni/okularium/public/prohlidky/time?date=" + dateStr,
             success: function(result) {
                 var times = result.split(";");
                 times.pop();
@@ -50,7 +50,7 @@ function process() {
     if (!date || !time) {
         alert("Zvolte den a čas.");
     } else {
-        var url = "/Ocni/okularium/public/prohlidka/add?";
+        var url = "/Ocni/okularium/public/prohlidky/add?";
         url += "date=" + date;
         url += "&time=" + time;
         url += "&user=" + user;
