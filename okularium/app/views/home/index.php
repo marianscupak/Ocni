@@ -23,18 +23,32 @@
         </div>
         <?php
             }
-            else if ($_SESSION['role'] == 'admin') {
+            else {
         ?>
         <div class="mainSection">
-            <h1>Vítejte zpět administrátore <?= $_SESSION['name'] . ' ' . $_SESSION['surname'] ?>!</h1>
+            <h1>Vítejte zpět <?= $_SESSION['name'] . ' ' . $_SESSION['surname'] ?>!</h1>
             <div class="cardsContainer">
-                <a href="/Ocni/okularium/public/pacient" class="card">
+        <?php
+            if ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'doctor') {
+        ?>
+                <a href="/Ocni/okularium/public/pacienti" class="card">
                     <img src="/Ocni/okularium/public/images/patient.png">
                     <h2>Pacienti</h2>
                 </a>
-                <a href="/Ocni/okularium/public/prohlidka" class="card">
+                <a href="/Ocni/okularium/public/pacienti/pridat" class="card">
+                    <img src="/Ocni/okularium/public/images/patient.png">
+                    <h2>Přidat pacienta</h2>
+                </a>
+                <a href="/Ocni/okularium/public/prohlidky" class="card">
                     <img src="/Ocni/okularium/public/images/exam.png">
                     <h2>Prohlídky</h2>
+                </a>
+                <?php
+                    }
+                ?>
+                <a href="/Ocni/okularium/public/prohlidky/pridat" class="card">
+                    <img src="/Ocni/okularium/public/images/exam.png">
+                    <h2>Objednat prohlídku</h2>
                 </a>
             </div>
         </div>

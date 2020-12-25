@@ -98,6 +98,7 @@
 .niceButton,
 .loginForm input[type="submit"],
 #changeForm input[type="submit"] {
+    color: black;
     background-color: #FF6347;
     border: none;
     cursor: pointer;
@@ -156,6 +157,7 @@
 .card img {
     width: 100px;
     display: block;
+    margin: auto;
 }
 
 .card h2 {
@@ -187,6 +189,10 @@
     font-size: 1.2rem;
 }
 
+.field {
+    margin-bottom: 10px;
+}
+
 #changeForm {
     display: none;
     margin: auto 0;
@@ -195,6 +201,48 @@
 
 #changeForm input {
     background-color: #f0f0f0;
+}
+
+#timeSelection {
+    margin-left: auto;
+    display: none;
+}
+
+#submitButton {
+    display: none;
+    margin: 0;
+}
+
+.form-control {
+    padding: 3px;
+    transition: 0.5s ease;
+}
+
+.form-control:focus {
+    border: 1px solid #FF6347;
+    padding: 4px;
+}
+
+#time,
+#user {
+    padding: 5px;
+}
+
+#reason {
+    min-width: 200px;
+    transition: 0.5s ease;
+    padding: 2px;
+}
+
+#user,
+#time {
+    transition: 0.5s ease;
+}
+
+#reason:focus,
+#user:focus,
+#time:focus {
+    border: 1px solid #FF6347;
 }
 
 @media screen and (max-width: 600px) {
