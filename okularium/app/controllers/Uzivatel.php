@@ -96,7 +96,6 @@ class Uzivatel extends Controller {
                 else {
                     $emailUp = false;
                 }
-                
             }
 
             if (!empty($_POST['pwd_o'] && !empty($_POST['pwd_n']))) {
@@ -105,6 +104,9 @@ class Uzivatel extends Controller {
                 if (password_verify($_POST['pwd_o'], $user['password'])) {
                     $user->password = password_hash($_POST['pwd_n'], PASSWORD_DEFAULT);
                     $user->save();
+
+                    $mailer = new Email;
+                    $mailer->send_email($email, 'Aktualizace účtu', $this->viewToVar('emails/user_update'));
 
                     header("Location: /Ocni/okularium/public/uzivatel/" . $email . "?pwd=1");
                     exit();
@@ -117,6 +119,11 @@ class Uzivatel extends Controller {
             else if ((!empty($_POST['pwd_o']) && empty($_POST['pwd_n'])) || (empty($_POST['pwd_o']) && !empty($_POST['pwd_n']))) {
                 header("Location: /Ocni/okularium/public/uzivatel/" . $email . "?pwd=0");
                 exit();
+            }
+
+            if ($emailUp) {
+                $mailer = new Email;
+                $mailer->send_email($email, 'Aktualizace účtu', $this->viewToVar('emails/user_update'));
             }
 
             header("Location: /Ocni/okularium/public/uzivatel/" . $email . "/?update=" . (($emailUp)? 1 : 0));

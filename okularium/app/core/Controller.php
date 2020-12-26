@@ -10,4 +10,10 @@ class Controller {
     public function view($view, $data = '') {
         require_once '../app/views/' . $view . '.php';
     }
+
+    public function viewToVar($view, $data = '') {
+        ob_start();
+        require_once '../app/views/' . $view . '.php';
+        return ob_get_clean();
+    }
 }

@@ -51,11 +51,15 @@ class Pacienti extends Controller {
             $password = generate_pwd();  // todo: emails
             $user->password = password_hash($password, PASSWORD_DEFAULT);   //tzQt2j
 
-            $file = fopen("pwd_temp.txt", "a");
-            fwrite($file, $user->email . " - " . $password . "\n");
-
             if (count(User::where("email", '=', $_POST['email'])->get()) == 0) {
                 $user->save();
+
+                $file = fopen("pwd_temp.txt", "a");
+                fwrite($file, $user->email . " - " . $password . "\n");
+
+                $mailer = new Email;
+                $mailer->send_email($user['email'], 'Okularium účet', $this->viewToVar('emails/new_user', ['user' => $user, 'password' => $password]));
+
                 header("Location: /Ocni/okularium/public/pacienti/pridat/?uadd=1");
                 exit();
             }

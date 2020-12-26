@@ -50,8 +50,8 @@
                     
                     foreach ($data['exams']['future'] as $exam) {
                         echo '<tr>
-                                <td>' . $exam->date . '</td>
-                                <td>' . $exam->time . '</td>
+                                <td>' . date_format(date_create_from_format('Y-m-d', $exam->date), 'j.n.Y') . '</td>
+                                <td>' . substr($exam->time, 0, -3) . '</td>
                                 <td>' . $exam->reason . '</td>
                             </tr>';
                     }
@@ -63,8 +63,8 @@
                     
                     foreach ($data['exams']['past'] as $exam) {
                         echo '<tr>
-                                <td>' . $exam->date . '</td>
-                                <td>' . $exam->time . '</td>
+                                <td>' . date_format(date_create_from_format('Y-m-d', $exam->date), 'j.n.Y') . '</td>
+                                <td>' . substr($exam->time, 0, -3) . '</td>
                                 <td>' . $exam->reason . '</td>
                             </tr>';
                     }
