@@ -11,7 +11,6 @@ class Email extends Model {
 
         try {
             //Server settings
-            $mail->SMTPDebug = SMTP::DEBUG_SERVER;
             $mail->isSMTP();
             $mail->Host = 'smtp-relay.sendinblue.com';
             $mail->SMTPAuth = true;

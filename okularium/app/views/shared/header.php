@@ -49,8 +49,7 @@
                             <li><a href="/Ocni/okularium/public/prohlidky/pridat">Objednat prohlídku</a></li>
                         </ul>
                     </li>
-
-                                <?php
+                    <?php
                             }
                         }
                     ?>
