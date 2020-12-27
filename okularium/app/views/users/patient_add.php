@@ -2,7 +2,7 @@
     <div class="mainSection">
         <h1>Přidat pacienta</h1>
         <div class="profileInfo">
-            <form method="post" action="/Ocni/okularium/public/pacienti/add">
+            <form method="post" action="/Ocni/okularium/public/uzivatel/add">
                 <div class="field">
                     <h2>Jméno</h2>
                     <input type="text" name="name" required>
