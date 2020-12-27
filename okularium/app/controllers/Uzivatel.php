@@ -91,9 +91,6 @@ class Uzivatel extends Controller {
             if (count(User::where("email", '=', $_POST['email'])->get()) == 0) {
                 $user->save();
 
-                $file = fopen("pwd_temp.txt", "a");
-                fwrite($file, $user->email . " - " . $password . "\n");
-
                 $mailer = new Email;
                 $mailer->send_email($user['email'], 'Okularium účet', $this->viewToVar('emails/new_user', ['user' => $user, 'password' => $password]));
 
