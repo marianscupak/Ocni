@@ -5,7 +5,7 @@ var dateSettings = {
         }
     ],
     "locale": {
-        "firstDayOfWeek": 1
+        "firstDayOfWeek": 1 // monday = 1
     },
     minDate: new Date().fp_incr(1),
     altInput: true,
