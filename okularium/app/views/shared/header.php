@@ -27,14 +27,15 @@
         </div>
         <button onclick="responsiveMenu();" class="menuImg"><img src="/Ocni/domaci-optika/public/images/menu.png" alt="menu"></button>
         <div class="stickyHeader-hide stickyHeader">
-            <a href="/Ocni/okularium/public"><img src="/Ocni/okularium/public/images/logo_klinika.png" alt="Domácí optika" class="stickyImg"></a>
+            <a href="/Ocni/okularium/public"><img src="/Ocni/okularium/public/images/logo_klinika.png" alt="Okularium" class="stickyImg"></a>
             <nav class="navigation">
                 <ul>
                     <li><a href="/Ocni/okularium/public/">Domů</a></li>
                     <li class="dropdownHeader" onclick="dropdownMenu(0);"><a>O nás<img src="/Ocni/domaci-optika/public/images/arrow.png" alt="Šipka" class="navArrow"></a>
                         <ul>
-                            <li><a href="/Ocni/domaci-optika/public/jak_to_funguje">Jak to funguje</a></li>
-                            <li><a href="/Ocni/domaci-optika/public/kontakty">Kontakt</a></li>
+                            <li><a href="/Ocni/okularium/public/informace">Informace</a></li>
+                            <li><a href="/Ocni/okularium/public/cenik">Ceník</a></li>
+                            <li><a href="/Ocni/okularium/public/kontakty">Kontakt</a></li>
                         </ul>
                     </li>
                     <?php

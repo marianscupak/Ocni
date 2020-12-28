@@ -1,6 +1,6 @@
-var sticky = 128; // measured by hand not to snap (it should be the height above the navigation bar)
-
 var header = $(".stickyHeader-hide")[0];
+
+var sticky = header.offsetTop;
 
 var img = $(".stickyImg")[0];
 
