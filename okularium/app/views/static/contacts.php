@@ -1,0 +1,17 @@
+<main class="container">
+    <div class="mainPanel">
+        <h1>KONTAKTY</h1>
+        <div class="mainSection">
+            <h2>Telefon</h2>
+            <p>739 029 743</p>
+            <h2>E-mail</h2>
+            <p>sylva.smehlikova@gmail.com</p>
+            <h2>Adresa</h2>
+            <p>Sokolská třída 2800/99, Ostrava</p>
+            <div id="map" style="width:600px; height:400px;"></div>
+        </div>
+    </div>
+</main>
+<script type="text/javascript" src="https://api.mapy.cz/loader.js"></script>
+<script type="text/javascript">Loader.load()</script>
+<script src="/Ocni/okularium/public/js/map.js"></script>

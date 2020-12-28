@@ -73,6 +73,9 @@ class Prohlidky extends Controller {
             if (count(Exam::where('date', '=', $exam->date)->where('time', '=', $exam->time)->get() == 0)) {
                 $exam->save();
 
+                $mailer = new Email;
+                $mailer->send_email('sylva.smehlikova@gmail.com', 'Nová prohlídka', $this->viewToVar('emails/new_exam', ['exam' => $exam]));
+
                 header("Location: /Ocni/okularium/public/prohlidky/pridat/?add=1");
                 exit();
             }
