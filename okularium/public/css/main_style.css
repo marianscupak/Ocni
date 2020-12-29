@@ -231,7 +231,9 @@
 
 #reason {
     min-width: 200px;
-    transition: 0.5s ease;
+    min-height: 50px;
+    max-width: 500px;
+    transition: 0.5s ease border;
     padding: 2px;
 }
 
@@ -250,6 +252,10 @@
     margin-bottom: 30px;
 }
 
+#daysForm {
+    width: 100%;
+}
+
 .day {
     display: flex;
     width: 100%;
@@ -258,6 +264,22 @@
 .day .value {
     display: flex;
     margin-right: 10px;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+}
+
+.day .value h2 {
+    margin: 0 5px 0 0;
+}
+
+.deleteButton {
+    margin: 0;
+    height: 100%;
+}
+
+#template {
+    display: none;
 }
 
 @media screen and (max-width: 600px) {

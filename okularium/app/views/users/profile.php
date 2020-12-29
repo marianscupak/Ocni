@@ -50,7 +50,7 @@
                     
                     foreach ($data['exams']['future'] as $exam) {
                         echo '<tr>
-                                <td>' . date_format(date_create_from_format('Y-m-d', $exam->date), 'j.n.Y') . '</td>
+                                <td>' . DateTime::createFromFormat('Y-m-d', $exam->date)->format('j.n.Y') . '</td>
                                 <td>' . substr($exam->time, 0, -3) . '</td>
                                 <td>' . $exam->reason . '</td>
                             </tr>';

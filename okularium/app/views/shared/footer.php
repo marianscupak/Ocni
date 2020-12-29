@@ -65,6 +65,14 @@
                 echo 'E-mailová adresa už je zabrána jiným uživatelem.';
             }
         }
+        if (isset($_GET['hrs'])) {
+            if ($_GET['hrs'] == 1) {
+                echo 'Hodiny nastaveny.';
+            }
+            else {
+                echo 'Nesmíte nastavovat 2 hodnoty pro jeden den.';
+            }
+        }
     ?>
 </div>
 <div class="loginWrapper">

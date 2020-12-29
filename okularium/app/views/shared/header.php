@@ -48,6 +48,7 @@
                             <li><a href="/Ocni/okularium/public/pacienti/pridat">Přidat pacienta</a></li>
                             <li><a href="/Ocni/okularium/public/prohlidky">Prohlídky</a></li>
                             <li><a href="/Ocni/okularium/public/prohlidky/pridat">Objednat prohlídku</a></li>
+                            <li><a href="/Ocni/okularium/public/ordinacni_hodiny">Upravit ordinační hodiny</a></li>
                         </ul>
                     </li>
                     <?php
