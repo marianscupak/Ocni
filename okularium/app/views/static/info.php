@@ -12,12 +12,22 @@
             </p>
             <h2>Důležité</h2>
             <p>
-                Nemáme smlouvu se zdravotní pojišťovnou. Pacientovi se věnujeme podle jeho potřeby a  našeho přesvědčení s dostatkem času.
+                Nemáme smlouvu se zdravotní pojišťovnou. Pacientovi se věnujeme podle jeho potřeby a našeho přesvědčení s dostatkem času.
             </p>
             <h2>Ordinační doba</h2>
-            <p>
-                Středa 9.00 – 14.00 pouze pro objednané
-            </p>
+                <?php
+                    $times = Times::get();
+                    if (!empty($times)) {
+                        foreach ($times as $time) {
+                            echo '<p>' . Times::translate($time->day) . ' ' . substr($time->time_from, 0, -3) . ' - ' . substr($time->time_to, 0 , -3) . '</p>';
+                        }
+                        echo '<p>Pouze pro objednané.</p>';
+                    }
+                    else {
+                        echo 'Středa 9.00 – 14.00 pouze pro objednané';
+                    }
+                ?>
+                
         </div>
     </div>
 </main>

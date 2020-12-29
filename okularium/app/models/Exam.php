@@ -4,7 +4,7 @@ use Illuminate\Database\Eloquent\Model as Model;
 
 class Exam extends Model {
     protected $table = 'exams';
-    protected $primaryKey = ['id_user', 'date', 'time'];
+    protected $primaryKey = ['date', 'time'];
     public $incrementing = false;
     public $timestamps = false;
 

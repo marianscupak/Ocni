@@ -34,15 +34,21 @@
         <?php 
             if (count($data['exams']['future']) + count($data['exams']['past']) > 0) {
                 echo '<table class="priceTable">
-                        <thead id="examTableHead">
-                            <tr>
-                                <th>Datum</th>
-                                <th>Čas</th>
-                                <th>Důvod</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        ';
+                    <thead id="examTableHead">
+                        <tr>
+                            <th>Datum</th>
+                            <th>Čas</th>
+                            <th>Důvod</th>
+                            ';
+                            if (!empty($_SESSION)) {
+                                if ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'doctor') {
+                                    echo '<th>Zrušit</th>';
+                                }
+                            }
+                        echo '</tr>
+                    </thead>
+                    <tbody>
+                    ';
                 if (count($data['exams']['future']) > 0) {
                     echo '<tr>
                             <td colspan="4">Nadcházející prohlídky</td>
@@ -50,10 +56,15 @@
                     
                     foreach ($data['exams']['future'] as $exam) {
                         echo '<tr>
-                                <td>' . DateTime::createFromFormat('Y-m-d', $exam->date)->format('j.n.Y') . '</td>
-                                <td>' . substr($exam->time, 0, -3) . '</td>
-                                <td>' . $exam->reason . '</td>
-                            </tr>';
+                            <td>' . DateTime::createFromFormat('Y-m-d', $exam->date)->format('j.n.Y') . '</td>
+                            <td>' . substr($exam->time, 0, -3) . '</td>
+                            <td>' . $exam->reason . '</td>';
+                            if (!empty($_SESSION)) {
+                                if ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'doctor') {
+                                    echo '<td><a href="/Ocni/okularium/public/prohlidky/delete/?date=' . $exam->date . '&time=' . substr($exam->time, 0, -3) . '" class="link">Zrušit</a></td>';
+                                }
+                            }
+                        echo '</tr>';
                     }
                 }
                 if (count($data['exams']['past']) > 0) {
@@ -65,8 +76,13 @@
                         echo '<tr>
                                 <td>' . date_format(date_create_from_format('Y-m-d', $exam->date), 'j.n.Y') . '</td>
                                 <td>' . substr($exam->time, 0, -3) . '</td>
-                                <td>' . $exam->reason . '</td>
-                            </tr>';
+                                <td>' . $exam->reason . '</td>';
+                                if (!empty($_SESSION)) {
+                                    if ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'doctor') {
+                                        echo '<td><a href="/Ocni/okularium/public/prohlidky/delete/?date=' . $exam->date . '&time=' . substr($exam->time, 0, -3) . '" class="link">Zrušit</a></td>';
+                                    }
+                                }
+                            echo '</tr>';
                     }
                 }
                 echo '</tbody>
