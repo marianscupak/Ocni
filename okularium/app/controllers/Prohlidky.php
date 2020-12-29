@@ -40,27 +40,6 @@ class Prohlidky extends Controller {
         }
     }
 
-    public function time($params = []) {
-        $times = ['07:30:00', '08:30:00', '09:30:00'];
-
-        if (!empty($_GET)) {
-            $exams = Exam::where('date', '=', $_GET['date'])->get();
-
-            if (count($exams) > 0) {
-                foreach ($exams as $exam) {
-                    if (($key = array_search($exam->time, $times)) !== false) {
-                        unset($times[$key]);
-                    }
-                }
-            }
-
-            foreach ($times as $time) {
-                echo substr($time, 0, -3) . ';';
-            }
-            exit();
-        }
-    }
-
     public function add($params = []) {
         if (!empty($_GET)) {
             $exam = new Exam;
