@@ -12,6 +12,6 @@
         </div>
     </div>
 </main>
-<script type="text/javascript" src="https://api.mapy.cz/loader.js"></script>
-<script type="text/javascript">Loader.load()</script>
+<script src="https://api.mapy.cz/loader.js"></script>
+<script>Loader.load()</script>
 <script src="/Ocni/okularium/public/js/map.js"></script>
