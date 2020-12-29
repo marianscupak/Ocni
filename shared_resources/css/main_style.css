@@ -139,13 +139,15 @@ h2 {
 }
 
 .priceTable thead,
-.priceTable td[colspan="4"] {
+.priceTable td[colspan="4"],
+.priceTable td[colspan="5"] {
     background-color: #65c3ba;
     color: white;
     font-size: 1.2rem;
 }
 
-.priceTable td[colspan="4"] {
+.priceTable td[colspan="4"],
+.priceTable td[colspan="5"] {
     text-align: center;
 }
 

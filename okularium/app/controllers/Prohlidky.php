@@ -68,4 +68,30 @@ class Prohlidky extends Controller {
             exit();
         }
     }
+
+    public function delete($params = []) {
+        if (!empty($_SESSION)) {
+            if ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'doctor') {
+                if (!empty($_GET)) {
+                    $exam = Exam::where('date', '=', $_GET['date'])->where('time', '=', $_GET['time']);
+                    $exam->delete();
+                    
+                    header("Location: /Ocni/okularium/public/prohlidky/?del=1");
+                    exit();
+                }
+                else {
+                    header("Location: /Ocni/okularium/public/prohlidky/");
+                    exit();
+                }
+            }
+            else {
+                header("Location: /Ocni/okularium/public/prohlidky/");
+                exit();
+            }
+        }
+        else {
+            header("Location: /Ocni/okularium/public/prohlidky/");
+            exit();
+        }
+    }
 }

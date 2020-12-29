@@ -10,13 +10,14 @@
                                 <th>Datum</th>
                                 <th>Čas</th>
                                 <th>Důvod</th>
+                                <th>Zrušit</th>
                             </tr>
                         </thead>
                         <tbody>
                         ';
                 if (count($data['exams']['future']) > 0) {
                     echo '<tr>
-                            <td colspan="4">Nadcházející prohlídky</td>
+                            <td colspan="5">Nadcházející prohlídky</td>
                         </tr>';
                     
                     foreach ($data['exams']['future'] as $exam) {
@@ -25,12 +26,13 @@
                                 <td>' . DateTime::createFromFormat('Y-m-d', $exam->date)->format('j.n.Y') . '</td>
                                 <td>' . substr($exam->time, 0, -3) . '</td>
                                 <td>' . $exam->reason . '</td>
+                                <td><a href="/Ocni/okularium/public/prohlidky/delete/?date=' . $exam->date . '&time=' . substr($exam->time, 0, -3) . '" class="link">Zrušit</a></td>
                             </tr>';
                     }
                 }
                 if (count($data['exams']['past']) > 0) {
                     echo '<tr>
-                            <td colspan="4">Minulé prohlídky</td>
+                            <td colspan="5">Minulé prohlídky</td>
                         </tr>';
                     
                     foreach ($data['exams']['past'] as $exam) {

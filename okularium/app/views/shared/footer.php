@@ -46,7 +46,7 @@
         }
         if (isset($_GET['del'])) {
             if ($_GET['del'] == 1) {
-                echo 'Uživatel odebrán.';
+                echo 'Úspěšně odebráno.';
             }
         }
         if (isset($_GET['add'])) {

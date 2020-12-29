@@ -71,7 +71,8 @@ h2 {
     background-color: #DC143C;
 }
 
-.priceTable td[colspan="4"] {
+.priceTable td[colspan="4"],
+.priceTable td[colspan="5"] {
     color: white;
     background-color: #FF6347;
 }
