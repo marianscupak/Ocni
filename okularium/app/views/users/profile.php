@@ -10,8 +10,14 @@
                 <div class="value"><?= $data['user']->surname ?></div>
                 <h3>E-mail</h3>
                 <div class="value"><?= $data['user']->email ?><button class="niceButton changeButton" onclick="changeForm(0);">Změnit</button></div>
-                <h3>Heslo</h3>
-                <button class="niceButton changeButton" onclick="changeForm(1);">Změnit</button>
+                <?php
+                    if ($data['user']->id_user == $_SESSION['id_user']) {
+                ?>
+                    <h3>Heslo</h3>
+                    <button class="niceButton changeButton" onclick="changeForm(1);">Změnit</button>
+                <?php
+                    }
+                ?>
                 <?php
                     if (!empty($_SESSION)) {
                         if ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'doctor') {
