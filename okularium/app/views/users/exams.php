@@ -41,6 +41,7 @@
                                 <td>' . date_format(date_create_from_format('Y-m-d', $exam->date), 'j.n.Y') . '</td>
                                 <td>' . substr($exam->time, 0, -3) . '</td>
                                 <td>' . $exam->reason . '</td>
+                                <td><a href="/Ocni/okularium/public/prohlidky/delete/?date=' . $exam->date . '&time=' . substr($exam->time, 0, -3) . '" class="link">Zrušit</a></td>
                             </tr>';
                     }
                 }
