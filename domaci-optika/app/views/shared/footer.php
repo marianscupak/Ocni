@@ -11,6 +11,7 @@
     </div>
 </footer>
 <div id="message">
+    Web má pouze prezentační účel. 
     <?php            
         if (isset($_GET['add'])) {
             if ($_GET['add'] == 1) {
