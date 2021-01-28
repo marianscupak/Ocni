@@ -49,7 +49,7 @@ class Prohlidky extends Controller {
             $exam->id_user = $_GET['user'];
             $exam->reason = ((!empty($_GET['reason']))? $_GET['reason'] : '');
 
-            if (count(Exam::where('date', '=', $exam->date)->where('time', '=', $exam->time)->get() == 0)) {
+            if (count(Exam::where('date', '=', $exam->date)->where('time', '=', $exam->time)->get()) == 0) {
                 $exam->save();
 
                 $mailer = new Email;
