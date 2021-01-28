@@ -28,10 +28,10 @@ class Prohlidky extends Controller {
             $this->view('shared/header', ['title' => 'Oční klinika Okularium']);
             if ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'doctor') {
                 $patients = User::where('role', '=', 'patient')->get();
-                $this->view('users/exam_add', ['patients' => $patients]);
+                $this->view('admin/exam_add', ['patients' => $patients]);
             }
             else {
-                $this->view('users/exam_add');
+                $this->view('admin/exam_add');
             }
             $this->view('shared/footer');
         }

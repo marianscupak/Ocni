@@ -1,7 +1,7 @@
 <?php
 
 class Pacienti extends Controller {
-
+    
     public function index($params = []) {
         if (!empty($_SESSION)) {
             if ($_SESSION['role'] == 'doctor' || $_SESSION['role'] == 'admin') {
@@ -26,7 +26,7 @@ class Pacienti extends Controller {
         if (!empty($_SESSION)) {
             if ($_SESSION['role'] == 'doctor' || $_SESSION['role'] == 'admin') {
                 $this->view('shared/header', ['title' => 'Oční klinika Okularium']);
-                $this->view('users/patient_add');
+                $this->view('admin/patient_add');
                 $this->view('shared/footer');
             }
             else {

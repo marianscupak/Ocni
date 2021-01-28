@@ -1,11 +1,12 @@
 <?php
 
 class Ordinacni_hodiny extends Controller {
-    // Homepage controller.
+    
     public function index() {
         if (!empty($_SESSION) && ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'doctor')) {
             $this->view('shared/header', ['title' => 'Oční klinika Okularium']);
-            $this->view('office_hours');
+            $days = Times::get();
+            $this->view('admin/office_hours', ['days' => $days]);
             $this->view('shared/footer');
         }
         else {
@@ -29,7 +30,7 @@ class Ordinacni_hodiny extends Controller {
                     $day->save();
                 }
 
-                if (count($_POST['days']) < count($times = Times::get())) {
+                if (count($_POST['days']) < count($times = Times::all())) {
                     foreach ($times as $time) {
                         if (!in_array($time->day, $_POST['days'])) {
                             $time->delete();

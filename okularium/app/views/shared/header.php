@@ -49,6 +49,7 @@
                             <li><a href="/Ocni/okularium/public/prohlidky">Prohlídky</a></li>
                             <li><a href="/Ocni/okularium/public/prohlidky/pridat">Objednat prohlídku</a></li>
                             <li><a href="/Ocni/okularium/public/ordinacni_hodiny">Upravit ordinační hodiny</a></li>
+                            <li><a href="/Ocni/okularium/public/cenik/upravit">Upravit ceník</a></li>
                         </ul>
                     </li>
                     <?php
