@@ -7,10 +7,10 @@ $capsule = new Capsule();
 
 $capsule->addConnection([
     'driver' => 'mysql',
-    'host' => '127.0.0.1',
+    'host' => 'localhost',
     'username' => 'root',
-    'password' => '',
-    'database' => 'domaci-optika',
+    'password' => 'DBPass2021',
+    'database' => 'ocni',
     'charset' => 'utf8'
 ]);
 
