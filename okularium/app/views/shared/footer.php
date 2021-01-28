@@ -73,6 +73,14 @@
                 echo 'Nesmíte nastavovat 2 hodnoty pro jeden den.';
             }
         }
+        if (isset($_GET['prc'])) {
+            if ($_GET['prc'] == 1) {
+                echo 'Ceník upraven.';
+            }
+            else {
+                echo 'Chyba ve změně ceníku.';
+            }
+        }
     ?>
 </div>
 <div class="loginWrapper">
