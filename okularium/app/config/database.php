@@ -9,7 +9,7 @@ $capsule->addConnection([
     'driver' => 'mysql',
     'host' => 'localhost',
     'username' => 'root',
-    'password' => 'DBPass2021',
+    'password' => '',
     'database' => 'ocni',
     'charset' => 'utf8'
 ]);

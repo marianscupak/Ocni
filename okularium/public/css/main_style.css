@@ -295,4 +295,8 @@
     #welcomeImg {
         width: 60%;
     }
+    .cardsContainer {
+        flex-direction: column;
+    }
+    
 }

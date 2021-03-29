@@ -10,7 +10,7 @@ $capsule->addConnection([
     'host' => '127.0.0.1',
     'username' => 'root',
     'password' => '',
-    'database' => 'domaci-optika',
+    'database' => 'ocni',
     'charset' => 'utf8'
 ]);
 
