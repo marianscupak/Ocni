@@ -18,9 +18,8 @@
                                     <td>' . $patient->name . '</td>
                                     <td>' . $patient->surname . '</td>
                                     <td>' . $patient->email . '</td>
-                                    <td><a href="/Ocni/okularium/public/uzivatel/' . $patient->email . '" class="link">Profil</a>
+                                    <td><a href="' . LINK_PREFIX . '/uzivatel/' . $patient->email . '" class="link">Profil</a>
                                 </tr>';
-
                         }
                         
                     }

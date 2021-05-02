@@ -21,12 +21,12 @@
                 <?php
                     if (!empty($_SESSION)) {
                         if ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'doctor') {
-                            echo '<br /><br /><a class="niceButton changeButton" href="/Ocni/okularium/public/uzivatel/delete/' . $data['user']->id_user . '">Odebrat pacienta</a>';
+                            echo '<br /><br /><a class="niceButton changeButton" href="' . LINK_PREFIX . '/uzivatel/delete/' . $data['user']->id_user . '">Odebrat pacienta</a>';
                         }
                     }
                 ?>
             </div>
-            <form action="/Ocni/okularium/public/uzivatel/update" method="post" id="changeForm">
+            <form action="<?php echo LINK_PREFIX; ?>/uzivatel/update" method="post" id="changeForm">
                 <input type="email" placeholder="Nový E-mail" id="email" name="email">
                 <div id="pwd">
                     <input type="password" placeholder="Staré heslo" name="pwd_o">
@@ -67,7 +67,7 @@
                             <td>' . $exam->reason . '</td>';
                             if (!empty($_SESSION)) {
                                 if ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'doctor') {
-                                    echo '<td><a href="/Ocni/okularium/public/prohlidky/delete/?date=' . $exam->date . '&time=' . substr($exam->time, 0, -3) . '" class="link">Zrušit</a></td>';
+                                    echo '<td><a href="' . LINK_PREFIX . '/prohlidky/delete/?date=' . $exam->date . '&time=' . substr($exam->time, 0, -3) . '" class="link">Zrušit</a></td>';
                                 }
                             }
                         echo '</tr>';
@@ -85,7 +85,7 @@
                                 <td>' . $exam->reason . '</td>';
                                 if (!empty($_SESSION)) {
                                     if ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'doctor') {
-                                        echo '<td><a href="/Ocni/okularium/public/prohlidky/delete/?date=' . $exam->date . '&time=' . substr($exam->time, 0, -3) . '" class="link">Zrušit</a></td>';
+                                        echo '<td><a href="' . LINK_PREFIX . '/prohlidky/delete/?date=' . $exam->date . '&time=' . substr($exam->time, 0, -3) . '" class="link">Zrušit</a></td>';
                                     }
                                 }
                             echo '</tr>';
@@ -100,4 +100,4 @@
         ?>
     </div>
 </main>
-<script src="/Ocni/okularium/public/js/profile.js"></script>
+<script src="<?php echo OK_RES_PREFIX; ?>/js/profile.js"></script>

@@ -1,8 +1,8 @@
 <?php
 
-class Pacienti extends Controller {
-    
-    public function index($params = []) {
+class Patients extends Controller {
+
+    public function index() {
         if (!empty($_SESSION)) {
             if ($_SESSION['role'] == 'doctor' || $_SESSION['role'] == 'admin') {
                 $patients = User::where('role', '=', 'patient')->get();
@@ -12,17 +12,17 @@ class Pacienti extends Controller {
                 $this->view('shared/footer');
             }
             else {
-                header("Location: /Ocni/okularium/public/");
+                header("Location: " . LINK_PREFIX . "/");
                 exit();
             }
         }
         else {
-            header("Location: /Ocni/okularium/public/");
+            header("Location: " . LINK_PREFIX . "/");
             exit();
         }
     }
 
-    public function pridat($params = []) {
+    public function add() {
         if (!empty($_SESSION)) {
             if ($_SESSION['role'] == 'doctor' || $_SESSION['role'] == 'admin') {
                 $this->view('shared/header', ['title' => 'Oční klinika Okularium']);
@@ -30,12 +30,12 @@ class Pacienti extends Controller {
                 $this->view('shared/footer');
             }
             else {
-                header("Location: /Ocni/okularium/public/");
+                header("Location: " . LINK_PREFIX . "/");
                 exit();
             }
         }
         else {
-            header("Location: /Ocni/okularium/public/");
+            header("Location: " . LINK_PREFIX . "/");
             exit();
         }
     }

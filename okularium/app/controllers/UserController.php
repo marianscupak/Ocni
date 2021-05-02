@@ -1,6 +1,6 @@
 <?php
 
-class Uzivatel extends Controller {
+class UserController extends Controller {
 
     public function index($params = []) {
         if (!empty($_SESSION)) {
@@ -16,7 +16,7 @@ class Uzivatel extends Controller {
                 $user = User::where('email', '=', $email)->first();
             }
             else {
-                header("Location: /Ocni/okularium/public/uzivatel/");
+                header("Location: " . LINK_PREFIX . "/uzivatel");
                 exit();
             }
 
@@ -27,7 +27,7 @@ class Uzivatel extends Controller {
                 ];    
             }
             else {
-                header("Location: /Ocni/okularium/public/uzivatel/");
+                header("Location: " . LINK_PREFIX . "/uzivatel");
                 exit();
             }
 
@@ -36,12 +36,12 @@ class Uzivatel extends Controller {
             $this->view('shared/footer');
         }
         else {
-            header("Location: /Ocni/okularium/public/");
+            header("Location: " . LINK_PREFIX . "/");
             exit();
         }
     }
 
-    public function login($params = []) {
+    public function login() {
         if (isset($_POST['login']) && isset($_POST['password'])) {
             $user = User::where('email', '=', $_POST['login'])->first();
 
@@ -53,17 +53,17 @@ class Uzivatel extends Controller {
                 $_SESSION['name'] = $user['name'];
                 $_SESSION['surname'] = $user['surname'];
 
-                header("Location: /Ocni/okularium/public/?login=1");
+                header("Location: " . LINK_PREFIX . "?login=1");
                 exit();
             }
             else {
-                header("Location: /Ocni/okularium/public/?login=0");
+                header("Location: " . LINK_PREFIX . "?login=0");
                 exit();
             }
             
         }
         else {
-            header("Location: /Ocni/okularium/public/");
+            header("Location: " . LINK_PREFIX . "/");
             exit();
         }
     }
@@ -73,11 +73,11 @@ class Uzivatel extends Controller {
         
         session_destroy();
 
-        header("Location: /Ocni/okularium/public/?logout=1");
+        header("Location: " . LINK_PREFIX . "?logout=1");
         exit();
     }
 
-    public function add($params = []) {
+    public function add() {
         if (!empty($_POST)) {
             $user = new User;
 
@@ -85,8 +85,8 @@ class Uzivatel extends Controller {
             $user->surname = $_POST['surname'];
             $user->email = $_POST['email'];
             $user->role = $_POST['role'];
-            $password = generate_pwd();  // todo: emails
-            $user->password = password_hash($password, PASSWORD_DEFAULT);   //tzQt2j
+            $password = generate_pwd();
+            $user->password = password_hash($password, PASSWORD_DEFAULT);
 
             if (count(User::where("email", '=', $_POST['email'])->get()) == 0) {
                 $user->save();
@@ -94,16 +94,16 @@ class Uzivatel extends Controller {
                 $mailer = new Email;
                 $mailer->send_email($user['email'], 'Okularium účet', $this->viewToVar('emails/new_user', ['user' => $user, 'password' => $password]));
 
-                header("Location: /Ocni/okularium/public/pacienti/pridat/?uadd=1");
+                header("Location: " . LINK_PREFIX . "/pacienti/pridat?uadd=1");
                 exit();
             }
             else {
-                header("Location: /Ocni/okularium/public/pacienti/pridat/?uadd=0");
+                header("Location: " . LINK_PREFIX . "/pacienti/pridat?uadd=0");
                 exit();
             }
         }
         else {
-            header("Location: /Ocni/okularium/public/pacienti/");
+            header("Location: " . LINK_PREFIX . "/pacienti");
             exit();
         }
     }
@@ -139,16 +139,16 @@ class Uzivatel extends Controller {
                     $mailer = new Email;
                     $mailer->send_email($email, 'Aktualizace účtu', $this->viewToVar('emails/user_update'));
 
-                    header("Location: /Ocni/okularium/public/uzivatel/" . $email . "?pwd=1");
+                    header("Location: " . LINK_PREFIX . "/uzivatel/" . $email . "?pwd=1");
                     exit();
                 }
                 else {
-                    header("Location: /Ocni/okularium/public/uzivatel/" . $email . "?pwd=-1");
+                    header("Location: " . LINK_PREFIX . "/uzivatel/" . $email . "?pwd=-1");
                     exit();
                 }
             }
             else if ((!empty($_POST['pwd_o']) && empty($_POST['pwd_n'])) || (empty($_POST['pwd_o']) && !empty($_POST['pwd_n']))) {
-                header("Location: /Ocni/okularium/public/uzivatel/" . $email . "?pwd=0");
+                header("Location: " . LINK_PREFIX . "/uzivatel/" . $email . "?pwd=0");
                 exit();
             }
 
@@ -157,42 +157,38 @@ class Uzivatel extends Controller {
                 $mailer->send_email($email, 'Aktualizace účtu', $this->viewToVar('emails/user_update'));
             }
 
-            header("Location: /Ocni/okularium/public/uzivatel/" . $email . "/?update=" . (($emailUp)? 1 : 0));
+            header("Location: " . LINK_PREFIX . "/uzivatel/" . $email . "?update=" . (($emailUp)? 1 : 0));
             exit();
             
         }
         else {
-            header("Location: /Ocni/okularium/public/uzivatel/");
+            header("Location: " . LINK_PREFIX . "/uzivatel");
             exit();
         }
     }
 
     public function delete($params = []) {
         if ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'doctor') {
-            if (is_numeric($params[0])) {
-                User::destroy($params[0]);
-                header("Location: /Ocni/okularium/public/uzivatel?del=1");
+            if (is_numeric($params)) {
+                echo $params;
+                User::destroy($params);
+
+                header("Location: " . LINK_PREFIX . "/uzivatel?del=1");
                 exit();
             }
             else {
-                header("Location: /Ocni/okularium/public/uzivatel");
+                header("Location: " . LINK_PREFIX . "/uzivatel");
                 exit();
             }
         }
         else {
-            header("Location: /Ocni/okularium/public/uzivatel");
+            header("Location: " . LINK_PREFIX . "/uzivatel");
             exit();
         }
     }
 }
 
-function generate_pwd(
-    int $length = 6,
-    string $keyspace = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
-): string {
-    if ($length < 1) {
-        throw new \RangeException("Length must be a positive integer");
-    }
+function generate_pwd($length = 6, $keyspace = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ') {
     $pieces = [];
     $max = mb_strlen($keyspace, '8bit') - 1;
     for ($i = 0; $i < $length; ++$i) {

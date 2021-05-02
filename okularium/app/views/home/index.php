@@ -4,15 +4,15 @@
             if (empty($_SESSION)) {
         ?>
         <div class="slideshow">
-            <img src="/Ocni/okularium/public/images/slideshow_dummy_1.jpg" alt="Okularium">
-            <img src="/Ocni/okularium/public/images/slideshow_dummy_2.jpg" alt="Okularium">
+            <img src="<?php echo OK_RES_PREFIX; ?>/images/slideshow_dummy_1.jpg" alt="Okularium">
+            <img src="<?php echo OK_RES_PREFIX; ?>/images/slideshow_dummy_2.jpg" alt="Okularium">
         </div>
         <h1>DOMLUVTE SI SCHŮZKU</h1>
         <div class="optionContainer">
             <div class="option">
                 <h2>Ještě jste u nás nebyli?</h2>
-                <a href="/Ocni/okularium/public/kontakty" class="blockLink"><img src="/Ocni/domaci-optika/public/images/icon_contact.png" alt="Kontakty"></a>
-                <p>Neváhejte nás <a href="/Ocni/okularium/public/kontakty" class="link">kontaktovat</a> prostřednictvím telefonu nebo emailu.</p>
+                <a href="<?php echo LINK_PREFIX; ?>/kontakty" class="blockLink"><img src="<?php echo DO_RES_PREFIX; ?>/images/icon_contact.png" alt="Kontakty"></a>
+                <p>Neváhejte nás <a href="<?php echo LINK_PREFIX; ?>/kontakty" class="link">kontaktovat</a> prostřednictvím telefonu nebo emailu.</p>
             </div>
             <div class="option">
                 <h2>Už jste u nás byli?</h2>
@@ -31,23 +31,23 @@
         <?php
             if ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'doctor') {
         ?>
-                <a href="/Ocni/okularium/public/pacienti" class="card">
-                    <img src="/Ocni/okularium/public/images/patient.png" alt="Pacienti">
+                <a href="<?php echo LINK_PREFIX; ?>/pacienti" class="card">
+                    <img src="<?php echo OK_RES_PREFIX; ?>/images/patient.png" alt="Pacienti">
                     <h2>Pacienti</h2>
                 </a>
-                <a href="/Ocni/okularium/public/pacienti/pridat" class="card">
-                    <img src="/Ocni/okularium/public/images/patient.png" alt="Přidat pacienta">
+                <a href="<?php echo LINK_PREFIX; ?>/pacienti/pridat" class="card">
+                    <img src="<?php echo OK_RES_PREFIX; ?>/images/patient.png" alt="Přidat pacienta">
                     <h2>Přidat pacienta</h2>
                 </a>
-                <a href="/Ocni/okularium/public/prohlidky" class="card">
-                    <img src="/Ocni/okularium/public/images/exam.png" alt="Prohlídky">
+                <a href="<?php echo LINK_PREFIX; ?>/prohlidky" class="card">
+                    <img src="<?php echo OK_RES_PREFIX; ?>/images/exam.png" alt="Prohlídky">
                     <h2>Prohlídky</h2>
                 </a>
                 <?php
                     }
                 ?>
-                <a href="/Ocni/okularium/public/prohlidky/pridat" class="card">
-                    <img src="/Ocni/okularium/public/images/exam.png" alt="Objednat prohlídku">
+                <a href="<?php echo LINK_PREFIX; ?>/prohlidky/pridat" class="card">
+                    <img src="<?php echo OK_RES_PREFIX; ?>/images/exam.png" alt="Objednat prohlídku">
                     <h2>Objednat prohlídku</h2>
                 </a>
             </div>
@@ -59,6 +59,6 @@
 </main>
 <?php
     if (empty($_SESSION)) {
-        echo '<script src="/Ocni/shared_resources/js/slideshow.js"></script>';
+        echo '<script src="' . SHARED_RES_PREFIX . '/js/slideshow.js"></script>';
     }
 ?>

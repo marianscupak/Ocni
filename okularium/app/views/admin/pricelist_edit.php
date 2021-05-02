@@ -2,7 +2,7 @@
     <div class="mainSection">
         <h1>Ceník</h1>
         <div class="profileInfo marginBottom">
-            <form method="post" action="/Ocni/okularium/public/cenik/update" id="form" class="pricesForm">
+            <form method="post" action="<?php echo LINK_PREFIX; ?>/cenik/update" id="form" class="pricesForm">
                 <?php
                     foreach ($data['prices'] as $price) {
                         echo '<div class="day">
@@ -43,4 +43,4 @@
     </div>
     <input type="button" onclick="removeElement(this);" class="niceButton deleteButton" value="Odstranit">
 </div>
-<script src="/Ocni/okularium/public/js/edit.js"></script>
+<script src="<?php echo OK_RES_PREFIX; ?>/js/edit.js"></script>

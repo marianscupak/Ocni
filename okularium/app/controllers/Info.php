@@ -1,10 +1,10 @@
 <?php
 
-class Kontakty extends Controller {
+class Info extends Controller {
     
     public function index() {
         $this->view('shared/header', ['title' => 'Oční klinika Okularium']);
-        $this->view('static/contacts');
+        $this->view('static/info');
         $this->view('shared/footer');
     }
 }

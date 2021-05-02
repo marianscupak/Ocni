@@ -1,6 +1,8 @@
 var days;
+let origin = window.location.href.replace('/prohlidky/pridat', '');
+
 $.get({
-    url: "/Ocni/okularium/public/ordinacni_hodiny/days/",
+    url: origin + "/ordinacni_hodiny/days/",
     success: function(result) {
         days = result.split(";");
         days.pop();
@@ -22,7 +24,7 @@ var dateSettings = {
     altFormat: "j. F Y",
     onChange: function(selectedDates, dateStr, instance) {
         $.get({
-            url: "/Ocni/okularium/public/ordinacni_hodiny/times/?date=" + dateStr,
+            url: origin + "/ordinacni_hodiny/times/?date=" + dateStr,
             success: function(result) {
                 var times = result.split(";");
                 times.pop();
@@ -60,7 +62,7 @@ function process() {
     if (!date || !time) {
         alert("Zvolte den a čas.");
     } else {
-        var url = "/Ocni/okularium/public/prohlidky/add?";
+        var url = origin + "/prohlidky/add?";
         url += "date=" + date;
         url += "&time=" + time;
         url += "&user=" + user;

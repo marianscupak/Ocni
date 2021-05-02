@@ -1,6 +1,6 @@
 <?php
 
-class Cenik extends Controller {
+class Prices extends Controller {
 
     public function index() {
         $this->view('shared/header', ['title' => 'Oční klinika Okularium']);
@@ -10,12 +10,24 @@ class Cenik extends Controller {
         $this->view('shared/footer');
     }
 
-    public function upravit() {
-        $this->view('shared/header', ['title' => 'Oční klinika Okularium']);
+    public function edit() {
+        if (!empty($_SESSION)) {
+            if ($_SESSION['role'] == 'doctor' || $_SESSION['role'] == 'admin') {
+                $this->view('shared/header', ['title' => 'Oční klinika Okularium']);
 
-        $prices = Pricelist::all();
-        $this->view('admin/pricelist_edit', ['prices' => $prices]);
-        $this->view('shared/footer');
+                $prices = Pricelist::all();
+                $this->view('admin/pricelist_edit', ['prices' => $prices]);
+                $this->view('shared/footer');
+            }
+            else {
+                header("Location: " . LINK_PREFIX . "/cenik");
+                exit();
+            }
+        }
+        else {
+            header("Location: " . LINK_PREFIX . "/cenik");
+            exit();
+        }
     }
 
     public function update() {
@@ -40,11 +52,11 @@ class Cenik extends Controller {
                 }
             }
 
-            header("Location: /Ocni/okularium/public/cenik/upravit/?prc=1");
+            header("Location: " . LINK_PREFIX . "/cenik/upravit?prc=1");
             exit();
         }
         else {
-            header("Location: /Ocni/okularium/public/cenik/upravit/?prc=0");
+            header("Location: " . LINK_PREFIX . "/cenik/upravit?prc=0");
             exit();
         }
     }

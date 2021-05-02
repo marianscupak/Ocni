@@ -1,6 +1,6 @@
 <?php
 
-class Ordinacni_hodiny extends Controller {
+class OfficeHours extends Controller {
     
     public function index() {
         if (!empty($_SESSION) && ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'doctor')) {
@@ -10,7 +10,7 @@ class Ordinacni_hodiny extends Controller {
             $this->view('shared/footer');
         }
         else {
-            header("Location: /Ocni/okularium/public");
+             header("Location: " . LINK_PREFIX . "/");
             exit();
         }
     }
@@ -38,11 +38,11 @@ class Ordinacni_hodiny extends Controller {
                     }
                 }
 
-                header("Location: /Ocni/okularium/public/ordinacni_hodiny/?hrs=1");
+                 header("Location: " . LINK_PREFIX . "/ordinacni_hodiny?hrs=1");
                 exit();
             }
             else {
-                header("Location: /Ocni/okularium/public/ordinacni_hodiny/?hrs=0");
+                 header("Location: " . LINK_PREFIX . "/ordinacni_hodiny?hrs=0");
                 exit();
             }
         }
@@ -69,7 +69,7 @@ class Ordinacni_hodiny extends Controller {
             exit();
         }
         else {
-            header("Location: /Ocni/okularium/public/");
+             header("Location: " . LINK_PREFIX . "/");
             exit();
         }
     }

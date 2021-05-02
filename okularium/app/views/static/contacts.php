@@ -14,4 +14,4 @@
 </main>
 <script src="https://api.mapy.cz/loader.js"></script>
 <script>Loader.load()</script>
-<script src="/Ocni/okularium/public/js/map.js"></script>
+<script src="<?php echo OK_RES_PREFIX; ?>/js/map.js"></script>

@@ -2,7 +2,7 @@
     <div class="mainSection">
         <h1>Ordinační hodiny</h1>
         <div class="profileInfo marginBottom">
-            <form method="post" action="/Ocni/okularium/public/ordinacni_hodiny/update" id="form">
+            <form method="post" action="<?php echo LINK_PREFIX; ?>/ordinacni_hodiny/update" id="form">
                 <?php
                     foreach ($data['days'] as $day) {
                         echo '<div class="day">
@@ -49,4 +49,4 @@
     </div>
     <input type="button" onclick="removeElement(this);" class="niceButton deleteButton" value="Odstranit">
 </div>
-<script src="/Ocni/okularium/public/js/edit.js"></script>
+<script src="<?php echo OK_RES_PREFIX; ?>/js/edit.js"></script>

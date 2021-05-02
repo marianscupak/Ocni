@@ -1,6 +1,6 @@
 <?php
 
-class Domu extends Controller {
+class Home extends Controller {
     // Homepage controller.
     public function index() {
         $this->view('shared/header', ['title' => 'Oční klinika Okularium']);

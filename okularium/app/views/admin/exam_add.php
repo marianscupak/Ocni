@@ -37,5 +37,5 @@
         </div>
     </div>
 </main>
-<script src="/Ocni/okularium/public/js/flatpickr.js"></script>
-<script src="/Ocni/okularium/public/js/flatpickr_settings.js"></script>
+<script src="<?php echo OK_RES_PREFIX; ?>/js/flatpickr.js"></script>
+<script src="<?php echo OK_RES_PREFIX; ?>/js/flatpickr_settings.js"></script>

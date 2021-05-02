@@ -2,7 +2,7 @@
     <div class="mainSection">
         <h1>Přidat pacienta</h1>
         <div class="profileInfo">
-            <form method="post" action="/Ocni/okularium/public/uzivatel/add">
+            <form method="post" action="<?php echo LINK_PREFIX; ?>/uzivatel/add">
                 <div class="field">
                     <h2>Jméno</h2>
                     <input type="text" name="name" required>
@@ -20,21 +20,16 @@
                         echo "<h2>Role</h2>";
                     }
                 ?>
-                <input type="<?php 
-                    if ($_SESSION['role'] == 'admin') {
-                        echo "text";
-                    }
-                    else {
+                <select <?php 
+                    if ($_SESSION['role'] != 'admin') {
                         echo "hidden";
                     }
-                ?>" value="<?php
-                if ($_SESSION['role'] == 'admin') {
-                    echo "";
-                }
-                else {
-                    echo "patient";
-                }
-                ?>" name="role" required>
+                ?>
+                name="role" required>
+                <option value="patient" selected>Pacient</option>
+                <option value="doctor">Doktor</option>
+                <option value="admin">Admin</option>
+                </select>
                 <div class="field">
                     <input type="submit" value="Přidat" class="niceButton">
                 </div>
