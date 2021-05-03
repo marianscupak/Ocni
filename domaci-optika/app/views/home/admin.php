@@ -2,7 +2,7 @@
     <h1 class="fancyHeader">Administrace</h1>
     <h2>Přidat brýle</h2>
     <div class="filters">
-        <form action="/Ocni/domaci-optika/public/admin/add/" method="post" enctype="multipart/form-data" class="contactForm" style="margin-left: 0; width: 130%">
+        <form action="<?php echo LINK_PREFIX; ?>/admin/add/" method="post" enctype="multipart/form-data" class="contactForm" style="margin-left: 0; width: 130%">
             <label for="name">Název:</label>
             <input type="text" name="name" required>
             <label for="price">Cena:</label>
@@ -26,12 +26,12 @@
             foreach ($glasses as $_glasses) {
                  echo '
                     <div class="glassesContainer" style="width: 10%;">
-                        <a href="/Ocni/domaci-optika/public/bryle/detail/' . $_glasses->id_glasses . '" class="imageContainer">
-                            <img src="/Ocni/domaci-optika/public/images/glasses/glasses_' . $_glasses->id_glasses . '_1.jpg" alt="Brýle">
+                        <a href="' . LINK_PREFIX . '/bryle/detail/' . $_glasses->id_glasses . '" class="imageContainer">
+                            <img src="' . DO_RES_PREFIX . '/images/glasses/glasses_' . $_glasses->id_glasses . '_1.jpg" alt="Brýle">
                         </a>
-                        <a href="/Ocni/domaci-optika/public/bryle/detail/' . $_glasses->id_glasses . '" class="glassesName"><h2>' . $_glasses->name . '</h2></a>
+                        <a href="' . LINK_PREFIX . '/bryle/detail/' . $_glasses->id_glasses . '" class="glassesName"><h2>' . $_glasses->name . '</h2></a>
                         <h3>' . number_format($_glasses->price, 0, ',', ' ') . ' Kč</h3>
-                        <div class="glassesDelete"><a href="/Ocni/domaci-optika/public/admin/del/' . $_glasses->id_glasses . '">Smazat</a></div>
+                        <div class="glassesDelete"><a href="' . LINK_PREFIX . '/admin/del/' . $_glasses->id_glasses . '">Smazat</a></div>
                     </div>
                 ';            
             }               

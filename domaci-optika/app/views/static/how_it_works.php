@@ -5,11 +5,11 @@
             <p>Šetříme Váš čas i peníze. Doslova.</p>
             <p>Také chodíte někdy z optiky do optiky, protáčí se Vám oči nad cenami, máte pocit, že si brýle nemůžete vybrat a jen těžko hledáte čas pro další hledání?</p>
             <h2>Nabízíme řešení přesně pro Vás.</h2>
-            <img src="/Ocni/domaci-optika/public/images/domaci_optika.jpg" alt="Domácí optika">
+            <img src="<?php echo DO_RES_PREFIX; ?>/images/domaci_optika.jpg" alt="Domácí optika">
         </div>
         <div class="para">
             <p>Jsme součástí českého projektu Optik do domu.</p>
-            <img src="/Ocni/domaci-optika/public/images/optik_do_domu.jpg" alt="Optik do domu">
+            <img src="<?php echo DO_RES_PREFIX; ?>/images/optik_do_domu.jpg" alt="Optik do domu">
             <p>Domluvíte si schůzku s optikem - u Vás doma nebo prakticky kdekoliv. Optik přijde s kolekcí moderních obrub. Poradí Vám s výběrem nejvhodnějších obrub a brýlových čoček podle Vašich přání a potřeb.</p>            
         </div>
         <div class="para">
@@ -26,7 +26,7 @@
             </ol>
         </div>
         <div class="para">
-            <a href="/Ocni/domaci-optika/public/bryle"><h2 class="link">Zde můžete nahlédnout do naší nabídky brýlových obrub.</h2></a>
+            <a href="<?php echo LINK_PREFIX; ?>/bryle"><h2 class="link">Zde můžete nahlédnout do naší nabídky brýlových obrub.</h2></a>
         </div>
     </div>
 </main>

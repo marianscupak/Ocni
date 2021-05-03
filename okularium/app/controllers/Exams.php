@@ -1,8 +1,8 @@
 <?php
 
-class Prohlidky extends Controller {
+class Exams extends Controller {
 
-    public function index($params = []) {
+    public function index() {
         if (!empty($_SESSION)) {
             if ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'doctor') {
                 $exams = [
@@ -15,15 +15,15 @@ class Prohlidky extends Controller {
                 $this->view('shared/footer');
             }
             else {
-                header("Location: /Ocni/okularium/public/");
+                header("Location: " . LINK_PREFIX . "/");
             }
         }
         else {
-            header("Location: /Ocni/okularium/public/");
+            header("Location: " . LINK_PREFIX . "/");
         }
     }
 
-    public function pridat($params = []) {
+    public function add_view() {
         if (!empty($_SESSION)) {
             $this->view('shared/header', ['title' => 'Oční klinika Okularium']);
             if ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'doctor') {
@@ -36,11 +36,11 @@ class Prohlidky extends Controller {
             $this->view('shared/footer');
         }
         else {
-            header("Location: /Ocni/okularium/public/");
+            header("Location: " . LINK_PREFIX . "/");
         }
     }
 
-    public function add($params = []) {
+    public function add() {
         if (!empty($_GET)) {
             $exam = new Exam;
 
@@ -55,42 +55,42 @@ class Prohlidky extends Controller {
                 $mailer = new Email;
                 $mailer->send_email('sylva.smehlikova@gmail.com', 'Nová prohlídka', $this->viewToVar('emails/new_exam', ['exam' => $exam]));
 
-                header("Location: /Ocni/okularium/public/prohlidky/pridat/?add=1");
+                header("Location: " . LINK_PREFIX . "/prohlidky/pridat?add=1");
                 exit();
             }
             else {
-                header("Location: /Ocni/okularium/public/prohlidky/pridat/?add=0");
+                header("Location: " . LINK_PREFIX . "/prohlidky/pridat?add=0");
                 exit();
             }
         }
         else {
-            header("Location: /Ocni/okularium/public/prohlidky/");
+            header("Location: " . LINK_PREFIX . "/prohlidky");
             exit();
         }
     }
 
-    public function delete($params = []) {
+    public function delete() {
         if (!empty($_SESSION)) {
             if ($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'doctor') {
                 if (!empty($_GET)) {
                     $exam = Exam::where('date', '=', $_GET['date'])->where('time', '=', $_GET['time']);
                     $exam->delete();
                     
-                    header("Location: /Ocni/okularium/public/prohlidky/?del=1");
+                    header("Location: " . LINK_PREFIX . "/prohlidky?del=1");
                     exit();
                 }
                 else {
-                    header("Location: /Ocni/okularium/public/prohlidky/");
+                    header("Location: " . LINK_PREFIX . "/prohlidky");
                     exit();
                 }
             }
             else {
-                header("Location: /Ocni/okularium/public/prohlidky/");
+                header("Location: " . LINK_PREFIX . "/prohlidky");
                 exit();
             }
         }
         else {
-            header("Location: /Ocni/okularium/public/prohlidky/");
+            header("Location: " . LINK_PREFIX . "/prohlidky");
             exit();
         }
     }

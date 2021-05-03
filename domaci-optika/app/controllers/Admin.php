@@ -8,7 +8,7 @@ class Admin extends Controller {
         $this->view('shared/footer');
     }
 
-    public function add($params = []) {
+    public function add() {
         if (isset($_POST['submitAdd'])) {
             $files = $_FILES['files'];
             $file_count = count($files['name']);
@@ -29,16 +29,16 @@ class Admin extends Controller {
             for ($i = 0; $i < $file_count; $i++) {
                 move_uploaded_file($files['tmp_name'][$i], "images/glasses/glasses_" . $id . "_" . ($i + 1) . ".jpg");
             }
-            header("Location: /Ocni/domaci-optika/public/admin?add=1");
+            header("Location: " . LINK_PREFIX . "/admin?add=1");
         }
     }
 
-    public function del($params = []) {
-        if (empty($params) || !is_numeric($params[0])) {
+    public function del($param = '') {
+        if (empty($param) || !is_numeric($param)) {
             $this->index();
         }
         else {
-            $id_glasses = $params[0];
+            $id_glasses = $param;
 
             $glasses = Glasses::find($id_glasses);
 
@@ -46,7 +46,7 @@ class Admin extends Controller {
 
             $glasses->delete();
 
-            header("Location: /Ocni/domaci-optika/public/admin?del=1");
+            header("Location: " . LINK_PREFIX . "/admin?del=1");
         }
     }
 }

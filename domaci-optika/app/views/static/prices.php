@@ -19,7 +19,7 @@
         </ul>
         <h2>Celková a konečná cena této vzorové zakázky je 3.613 Kč.</h2>
         <h2>Pokud se rozhodnete využít slevu 1+1, dostanete ještě jedny brýle v této kvalitě ZDARMA (neplatíte tedy levnější obrubu a levnější čočky).</h2>
-        <div><img src="/Ocni/domaci-optika/public/images/sample_price.png" alt="Transparentní cena" class="wideImg"></div>
+        <div><img src="<?php echo DO_RES_PREFIX; ?>/images/sample_price.png" alt="Transparentní cena" class="wideImg"></div>
         <p>Při návštěvě Vám můžeme nabídnout ještě další slevy, například slevu 30% na multifokálními čočky Multifokal Profi 1,5.</p>
         <p>Návštěva optika je ZDARMA.</p>
     </div>
