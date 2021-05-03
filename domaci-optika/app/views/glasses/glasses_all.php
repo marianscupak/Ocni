@@ -117,12 +117,12 @@
                         foreach ($data['glasses'] as $glasses) {
                             echo '
                                 <div class="glassesContainer">
-                                    <a href="/Ocni/domaci-optika/public/bryle/detail/' . $glasses->id_glasses . '" class="imageContainer">
-                                        <img src="/Ocni/domaci-optika/public/images/glasses/glasses_' . $glasses->id_glasses . '_1.jpg" alt="Brýle">
+                                    <a href="' . LINK_PREFIX . '/bryle/detail/' . $glasses->id_glasses . '" class="imageContainer">
+                                        <img src="' . DO_RES_PREFIX . '/images/glasses/glasses_' . $glasses->id_glasses . '_1.jpg" alt="Brýle">
                                     </a>
-                                    <a href="/Ocni/domaci-optika/public/bryle/detail/' . $glasses->id_glasses . '" class="glassesName"><h2>' . $glasses->name . '</h2></a>
+                                    <a href="' . LINK_PREFIX . '/bryle/detail/' . $glasses->id_glasses . '" class="glassesName"><h2>' . $glasses->name . '</h2></a>
                                     <h3>' . number_format($glasses->price, 0, ',', ' ') . ' Kč</h3>
-                                    <div class="glassesDetail"><a href="/Ocni/domaci-optika/public/bryle/detail/' . $glasses->id_glasses . '">Detail</a></div>
+                                    <div class="glassesDetail"><a href="' . LINK_PREFIX . '/bryle/detail/' . $glasses->id_glasses . '">Detail</a></div>
                                 </div>
                             ';
                         }
@@ -197,4 +197,4 @@
         </ul>
     </div>
 </main>
-<script src="/Ocni/shared_resources/js/form.js"></script>
+<script src="<?php echo SHARED_RES_PREFIX; ?>/js/form.js"></script>

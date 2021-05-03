@@ -1,6 +1,6 @@
 <?php
 
-class Bryle extends Controller {
+class GlassesController extends Controller {
 
     public function index($params = []) {
         $gender = '';
@@ -67,16 +67,16 @@ class Bryle extends Controller {
         $this->view("shared/footer");
     }
 
-    public function detail($params = []) {
-        if (empty($params)) {
+    public function detail($param = '') {
+        if (empty($param)) {
             $this->index();
         }
         else {
-            if (!is_numeric($params[0])) {
+            if (!is_numeric($param)) {
                 $this->index();
             }
             else {
-                $id = $params[0];
+                $id = $param;
 
                 $glasses = Glasses::select('*')->where('id_glasses', '=', $id)->get()[0];
 

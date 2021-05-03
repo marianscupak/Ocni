@@ -3,7 +3,7 @@
         <div class="para">
             <h1 class="fancyHeader">Ceník obrub a čoček</h1>
             <p>Kompletní brýle jsou tvořeny brýlovou obrubou a párem dioptrických čoček (zabroušení čoček je v ceně).</p>
-            <img src="/Ocni/domaci-optika/public/images/glasses_price_1.jpg" alt="Brýle jsou tvořeny obrubou a čočkami." class="wideImg">
+            <img src="<?php echo DO_RES_PREFIX; ?>/images/glasses_price_1.jpg" alt="Brýle jsou tvořeny obrubou a čočkami." class="wideImg">
         </div>
         <div class="para">
             <h2>Obruby</h2>

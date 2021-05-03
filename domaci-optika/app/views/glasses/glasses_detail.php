@@ -3,17 +3,17 @@
         <h1 class="bigHeader"><?php echo $data['glasses']->name ?></h1>
         <div class="gallery">
             <div class="gallerySlideWrap">
-                <div class="galleryPrevious"><img src="/Ocni/domaci-optika/public/images/arrow.png" alt="Předchozí" onclick="changeSlide(-1)"></div>
+                <div class="galleryPrevious"><img src="<?php echo DO_RES_PREFIX; ?>/images/arrow.png" alt="Předchozí" onclick="changeSlide(-1)"></div>
                 <?php
                     for ($i = 1; $i <= $data['glasses']->img_count; $i++) {
                         echo '<img id="slide_' . $i . '" class="gallerySlide';
                         if ($i == 1) {
                             echo " activeSlide";
                         }
-                        echo '" src="/Ocni/domaci-optika/public/images/glasses/glasses_' . $data['glasses']->id_glasses . '_' . $i . '.jpg" alt="Brýle">';
+                        echo '" src="' . DO_RES_PREFIX . '/images/glasses/glasses_' . $data['glasses']->id_glasses . '_' . $i . '.jpg" alt="Brýle">';
                     }
                 ?>
-                <div class="galleryNext"><img src="/Ocni/domaci-optika/public/images/arrow.png" alt="Následující" onclick="changeSlide(1)"></div>
+                <div class="galleryNext"><img src="<?php echo DO_RES_PREFIX; ?>/images/arrow.png" alt="Následující" onclick="changeSlide(1)"></div>
             </div>
             <div class="galleryThumbnailsWrap">
                 <?php
@@ -23,7 +23,7 @@
                             if ($i == 1) {
                                 echo ' class="activeThumbnail"';
                             }
-                            echo ' src="/Ocni/domaci-optika/public/images/glasses/glasses_' . $data['glasses']->id_glasses . '_' . $i . '.jpg" alt="Brýle" onclick="currentSlide(' . $i . ')">
+                            echo ' src="' . DO_RES_PREFIX . '/images/glasses/glasses_' . $data['glasses']->id_glasses . '_' . $i . '.jpg" alt="Brýle" onclick="currentSlide(' . $i . ')">
                            </div>';
                     }
                 ?>                
@@ -34,7 +34,7 @@
             <h1 class="darkHeader" id="interest">Zaujaly Vás tyto brýle?</h1>
             <h2>Domluvte si schůzku online!</h2>
             <!-- TODO: complete the form -->
-            <form action="/Ocni/domaci-optika/public/email" method="post" class="contactForm">
+            <form action="<?php echo LINK_PREFIX; ?>/email" method="post" class="contactForm">
                 <label for="name">Jméno <span class="required">*</span></label>
                 <input type="text" name="name" required>
                 <label for="surname">Příjmení <span class="required">*</span></label>
@@ -54,8 +54,8 @@
                 <input type="submit" name="submit" value="Odeslat">
                 <input type="hidden" value=<?php echo '"' . $data['glasses']->id_glasses . '"'; ?> name="id">
             </form>
-            <p id="contact">Nebo nás <a href="/Ocni/domaci-optika/public/kontakty" class="link">kontaktujte zde</a>.</p>
+            <p id="contact">Nebo nás <a href="<?php echo LINK_PREFIX; ?>/kontakty" class="link">kontaktujte zde</a>.</p>
         </div>
     </div>
 </main>
-<script src="/Ocni/shared_resources/js/gallery.js"></script>
+<script src="<?php echo SHARED_RES_PREFIX; ?>/js/gallery.js"></script>

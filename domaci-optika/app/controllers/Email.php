@@ -29,10 +29,10 @@ class Email extends Controller {
     
             mail($to, $subject, $message, $headers);        
     
-            header("Location: /Ocni/domaci-optika/public/bryle/detail/" . $glasses->id_glasses . "?mail=1");
+            header("Location: " . LINK_PREFIX . "/bryle/detail/" . $glasses->id_glasses . "?mail=1");
         }
         else {
-            header("Location: glasses.php");
+            header("Location: " . LINK_PREFIX . "/bryle");
         }
     }
 }

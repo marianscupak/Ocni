@@ -1,6 +1,6 @@
 <?php
 
-class Cenik extends Controller {
+class Prices extends Controller {
 
     public function index() {
         $this->view('shared/header', ['title' => 'Domácí optika']);

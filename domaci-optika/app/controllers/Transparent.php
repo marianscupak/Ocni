@@ -1,6 +1,6 @@
 <?php
 
-class Transparentni_ceny extends Controller {
+class Transparent extends Controller {
 
     public function index() {
         $this->view('shared/header', ['title' => 'Domácí optika']);

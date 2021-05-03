@@ -5,7 +5,7 @@ function proccessIntoURL() {
     var priceTo = $("#priceTo").val();
     var submit = $("#submit").val();
 
-    var url = "/Ocni/domaci-optika/public/bryle";
+    var url = "/Ocni/domaci-optika/bryle";
     if (gender) {
         url += "/" + gender;
     }
