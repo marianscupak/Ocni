@@ -14,4 +14,4 @@ Ocni is a project consisting of 2 web apps. One helps with the management of an 
 * MVC Architecture
 
 ## URL
-You can sometimes find this project [Named Link](marian.bruhmoment.eu/okularium, "here").
+You can sometimes find this project [here](http://marian.bruhmoment.eu/okularium/, "Okularium").
