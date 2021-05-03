@@ -1,3 +1,5 @@
 vendor/
 domaci-optika/old
 okularium/public/pwd_temp.txt
+okularium/app/config/database.php
+domaci-optika/app/config/database.php
